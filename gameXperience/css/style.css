@@ -1,12 +1,13 @@
-:root{
-    --primario:#2C3E50;
-    --secundario:#E74C3C;
+:root {
+    --primario: #8907f3;
+    --secundario: #E74C3C;
 
-    --resaltado:#FFC107;
-    --texto:#F8F9FA;
-    --fondo:#0f0f0f;
-    
-    --gris:#181818;
+    --resaltado: #FFC107;
+    --texto: #F8F9FA;
+    --parrafo: #bbbbbb;
+    --fondo: #0f0f0f;
+
+    --gris: #181818;
 }
 
 * {
@@ -15,12 +16,14 @@
     box-sizing: border-box;
     padding: 0;
 }
-body{
+
+body {
     background: linear-gradient(#181818, #101010);
     height: 100vh;
 }
-main{
-    color: #7a7a7a;
+
+main {
+    color: var(--parrafo);
 }
 
 .d-f {
@@ -43,57 +46,61 @@ main{
     align-items: center;
 }
 
-.sidebar .logo-details i {
-    font-size: 30px;
-    color: var(--texto);
-    height: 50px;
-    min-width: 78px;
+.sidebar .logo-details img {
+    font-size: 20px;
+    height: 40px;
+    min-width: 70px;
     text-align: center;
     line-height: 50px;
-
 }
 
 .sidebar .logo-details .logo-name {
-    font-size: 22px;
+    font-size: 25px;
     color: var(--primario);
-    font-weight: 600;
-}
-.sidebar .nav-links {
-    height: 100%;
-    padding-top: 30px;
-}
-
-.sidebar .nav-links li {
-    position: relative;
-    list-style: none;
-    margin: 5px 10px;
-    border-radius: 10px;
-    background: var(--gris);
-}
-
-.sidebar .nav-links li i {
-    height: 50px;
-    min-width: 78px;
-    text-align: center;
-    line-height: 50px;
-    color: #fff;
-    font-size: 20px;
-}
-
-.sidebar .nav-links li a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.sidebar .nav-links li a .link_name {
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--texto);
+    font-weight: 700;
 }
 
 .home-section {
     position: relative;
     left: 260px;
     width: calc(100% - 260px);
+}
+
+/* Carousel base class */
+.carousel {
+    margin-bottom: 4rem;
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+    height: 32rem;
+}
+
+/* RESPONSIVE CSS
+  -------------------------------------------------- */
+
+@media (min-width: 40em) {
+
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
 }
