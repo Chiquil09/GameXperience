@@ -15,19 +15,19 @@
     margin: 0;
     box-sizing: border-box;
     padding: 0;
-    
+
 }
 
-body{
+body {
     height: 100vh;
 }
 
 main {
     color: var(--parrafo);
-    background:#131313;
+    background: #131313;
 }
 
-.a{
+.a {
     text-decoration: none;
 }
 
@@ -46,33 +46,29 @@ main {
     height: 100%;
     width: 260px;
     background: var(--fondo);
-}
-
-.sidebar .logo-details {
-    height: 60px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.sidebar .logo-details img {
-    font-size: 20px;
-    height: 40px;
-    min-width: 70px;
-    text-align: center;
-    line-height: 50px;
-}
-
-.sidebar .logo-details .logo-name {
-    font-size: 25px;
-    color: var(--primario);
-    font-weight: 700;
+    transition: 0.5s;
 }
 
 .home-section {
     position: relative;
     left: 260px;
     width: calc(100% - 260px);
+    transition: 0.5s;
+}
+
+@media (max-width: 30em) {
+    .sidebar {
+        height: 100%;
+        width: 0px;
+        transition: 0.5s;
+    }
+    .home-section {
+        position: relative;
+        left: 0px;
+        width: calc(100% - 0px);
+        transition: 0.5s;
+    }
+
 }
 
 /* Carousel base class */
@@ -118,26 +114,33 @@ main {
     width: 4rem;
     height: 4rem;
     border-radius: .75rem;
-  }
-  
-  .icon-square {
+}
+
+.icon-square {
     width: 3rem;
     height: 3rem;
     border-radius: .75rem;
-  }
-  
-  .text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
-  .text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
-  .text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
-  
-  .card-cover {
+}
+
+.text-shadow-1 {
+    text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25);
+}
+
+.text-shadow-2 {
+    text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25);
+}
+
+.text-shadow-3 {
+    text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25);
+}
+
+.card-cover {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-  }
-  
-  .feature-icon-small {
+}
+
+.feature-icon-small {
     width: 3rem;
     height: 3rem;
-  }
-  
+}
