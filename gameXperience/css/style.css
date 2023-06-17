@@ -35,6 +35,35 @@ main {
     display: flex;
 }
 
+.btn1 {
+    padding: 10px 20px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #181818;
+    border-radius: 10px;
+    animation: 5s c-color ease-in-out infinite;
+}
+
+@keyframes c-color {
+    0% {
+        background-color: #ff009d;
+    }
+    25% {
+        background-color: #0066ff;
+    }
+    50% {
+        background-color: #00ff00;
+    }
+    75% {
+        background-color: #f1de2c;
+    }
+    100% {
+        background-color: #ff009d;
+    }
+}
+
+
 .color {
     color: var(--texto);
 }
@@ -62,6 +91,7 @@ main {
         width: 0px;
         transition: 0.5s;
     }
+
     .home-section {
         position: relative;
         left: 0px;
