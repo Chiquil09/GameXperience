@@ -41,7 +41,7 @@ main {
     text-align: center;
     text-decoration: none;
     background-color: #181818;
-    border-radius: 10px;
+    border-radius: 5px;
     animation: 5s c-color ease-in-out infinite;
 }
 
@@ -173,4 +173,8 @@ main {
 .feature-icon-small {
     width: 3rem;
     height: 3rem;
+}
+.carta{
+    background: #181818;
+    padding: 5px;
 }
