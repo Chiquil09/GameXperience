@@ -312,7 +312,6 @@ main {
     justify-content: space-around;
     height: 100px;
     line-height: 100px;
-    background: linear-gradient(rgba(39, 39, 39, 0.6), transparent);
     z-index: 100;
 }
 
