@@ -592,6 +592,7 @@ header {
     margin-top: 2.5rem;
     display: inline-block;
     border: none;
+    border-radius: 10px;
 }
 
 .boton-amarillo:hover {
@@ -609,6 +610,7 @@ header {
     margin-top: 2.5rem;
     display: block;
     border: none;
+    border-radius: 10px;
 }
 
 .boton-amarillo-block:hover {
@@ -617,7 +619,7 @@ header {
 }
 
 .boton-verde {
-    background-color: #71B100;
+    background-color: #4cce52;
     color: #FFFFFF;
     font-weight: 700;
     text-decoration: none;
@@ -626,10 +628,11 @@ header {
     margin-top: 2.5rem;
     display: inline-block;
     border: none;
+    border-radius: 10px;
 }
 
 .boton-verde:hover {
-    background-color: #619800;
+    background-color: #3ea143;
     cursor: pointer;
 }
 
@@ -644,6 +647,7 @@ header {
     display: block;
     border: none;
     width: 100%;
+    border-radius: 10px;
 }
 
 .boton-rojo-block:hover {
@@ -652,7 +656,7 @@ header {
 }
 
 .boton-verde-block {
-    background-color: #71B100;
+    background-color: #4cce52;
     color: #FFFFFF;
     font-weight: 700;
     text-decoration: none;
@@ -661,10 +665,11 @@ header {
     margin-top: 2.5rem;
     display: block;
     border: none;
+    border-radius: 10px;
 }
 
 .boton-verde-block:hover {
-    background-color: #619800;
+    background-color: #4cce52;
     cursor: pointer;
 }
 
@@ -676,29 +681,35 @@ header {
     font-weight: 700;
     text-transform: uppercase;
     margin: 1rem 0;
+    border-radius: 10px;
 }
 
 .alerta.error {
     background-color: rgb(223, 35, 35);
+    border-radius: 10px;
 }
 
 .alerta.exito {
     background-color: #71B100;
+    border-radius: 10px;
 }
 
 table.propiedades {
     margin-top: 4rem;
     width: 100%;
     border-spacing: 0;
+    border-radius: 10px;
 }
 
 table.propiedades thead {
-    background-color: #3b3b3b;
+    background: #313131;
+    border-radius: 10px;
 }
 
 table.propiedades thead th {
     color: #FFFFFF;
     padding: 2rem;
+    border-radius: 10px;
 }
 
 table.propiedades .imagen-tabla {
