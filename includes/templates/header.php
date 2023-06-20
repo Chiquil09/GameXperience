@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>GameXperience</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -26,13 +26,13 @@
 
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="/index.php" class="nav-link active" aria-current="page">
+          <a href="/index.php" class="nav-links active" aria-current="page">
             <i class="bi bi-house"></i>
             Inicio
           </a>
         </li>
         <li class="bajar">
-          <a href="/buscar.php" class="nav-link active">
+          <a href="/buscar.php" class="nav-links">
             <i class="bi bi-search"></i>
             Buscar
           </a>
@@ -41,21 +41,21 @@
         <hr class="custom-hr ">
 
         <li class="bajar">
-          <a href="/biblioteca.php" class="nav-link active">
+          <a href="/biblioteca.php" class="nav-links">
             <i class="bi bi-bookmark-fill"></i>
             Biblioteca
           </a>
         </li>
 
         <li class="bajar">
-          <a href="#" class="nav-link active">
+          <a href="#" class="nav-links">
             <i class="bi bi-braces"></i>
             Acerca de
           </a>
         </li>
 
         <li class="bajar">
-          <a href="/iniciarsesion1.php" class="nav-link active">
+          <a href="/iniciarsesion1.php" class="nav-links">
             <i class="bi bi-braces"></i>
             Login
           </a>

@@ -1,0 +1,3 @@
+Host:ftp.nfsmpro.info
+Usuario:equipo3@equipo3.nfsmpro.info
+Psw:equipo_3

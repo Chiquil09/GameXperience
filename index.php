@@ -15,7 +15,7 @@
                             <div class="carousel-caption text-start">
                                 <h1 class="color overflow-hidden ">Juegos Populares</h1>
                                 <p class="opacity-75 color">Tenemos para ti una amplia variedad de los mejores juegos del 2023</p>
-                                <p><a class="btn1 btn-lg btn-primary" href="#">Ir</a></p>
+                                <p><a class="btn1 btn-lg btn-primary" href="#"><span>ir</span></a></p>
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                             <div class="carousel-caption">
                                 <h1 class="color">Accion</h1>
                                 <p class="color">Los mejores juegos de accion</p>
-                                <p><a class="btn1 btn-lg btn-primary" href="#">Ir</a></p>
+                                <p><a class="btn1 btn-lg btn-primary" href="#"><span>ir</span></a></p>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                             <div class="carousel-caption text-end">
                                 <h1 class="color">Mejores Graficos</h1>
                                 <p class="color">Los juegos con graficos ultra realistas</p>
-                                <p><a class="btn1 btn-lg btn-primary" href="#">Ver</a></p>
+                                <p><a class="btn1 btn-lg btn-primary" href="#"><span>ver</span></a></p>
                             </div>
                         </div>
                     </div>
@@ -49,9 +49,6 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-        </div>
-        <div>
-
         </div>
         <div class="container">
             <?php include 'cards.php'; ?>
