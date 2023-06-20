@@ -17,7 +17,7 @@
                                         <p class="card-text">Halo Infinite</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name">comprar</a></button>
+                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>ver</span></a></button>
                                             </div>
                                             <small class="text-body-secondary">$50</small>
                                         </div>
@@ -31,7 +31,7 @@
                                         <p class="card-text">God Of War</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name">comprar</a></button>
+                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>ver</span></a></button>
                                             </div>
                                             <small class="text-body-secondary">$50</small>
                                         </div>
@@ -46,7 +46,7 @@
                                         <p class="card-text">Call Of Duty </p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name">comprar</a></button>
+                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>ver</span></a></button>
                                             </div>
                                             <small class="text-body-secondary">$50</small>
                                         </div>
@@ -62,7 +62,7 @@
                                         <p class="card-text">Fnaf Security Breach</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name">comprar</a></button>
+                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>comprar</span></a></button>
                                             </div>
                                             <small class="text-body-secondary">$50</small>
                                         </div>

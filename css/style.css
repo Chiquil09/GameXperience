@@ -37,16 +37,37 @@ main {
 }
 
 .btn1 {
-    padding: 10px 20px;
+    padding: 8px 2px;
     color: #ffffff;
     text-align: center;
     text-decoration: none;
     background-color: #181818;
-    border-radius: 10px;
+    border-radius: 8px;
+    animation: 30s c-color ease-in-out infinite;
 }
-.nav-link{
-    animation: 5s c-color ease-in-out infinite;
+.btn1 span{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #181818;
 }
+
+.nav-links {
+    width: 196;
+    height: 24;
+    padding: 8px 16px;
+    display: block;
+    border-radius: 5px;
+    text-decoration: none;
+    background: #252525;
+    color: #acacac;
+    transition: 0.5s;
+}
+
+.nav-links:hover {
+    background: #555555;
+    border-bottom: solid #58e04c;
+}
+
 /*Menu*/
 .bajar {
     margin-top: 20px;
@@ -85,6 +106,14 @@ main {
     }
 }
 
+.carta {
+    border-radius: 10px;
+    background: #181818;
+    padding: 0px 0px 20px 0px;
+}
+.carta img{
+    border-radius: 0px 10px;
+}
 
 .color {
     color: var(--texto);
@@ -125,7 +154,7 @@ main {
 
 /* Carousel base class */
 .carousel {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 /* Since positioning the image, we need to help out the caption */
@@ -141,8 +170,8 @@ main {
 
 /* Barra de busqueda */
 .container1 {
-    padding: 5%;
-    background: #181818;
+    padding: 2%;
+    background: #131313;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,8 +183,7 @@ main {
     background: rgba(237, 229, 229, 0.2);
     display: flex;
     align-items: center;
-    border-radius: 60px;
-    padding: 10px 20px;
+    border-radius: 100px;
     backdrop-filter: blur(4px) saturate(100%);
 }
 
@@ -167,7 +195,7 @@ main {
     width: 100%;
     padding: 0 10px 0 45px;
     border: none;
-    border-radius: 30px;
+    border-radius: 30px 0px 0px 30px;
     outline: none;
     transition: .2s ease;
 }
@@ -182,7 +210,7 @@ main {
 
 .search-bar button {
     border: 0;
-    border-radius: 50%;
+    border-radius: 0px 50px 50px 0px;
     width: 60px;
     height: 60px;
     background: #043331;
@@ -248,49 +276,57 @@ main {
 }
 
 /* estilos iniciar sesion */
-.wrapper{
+.wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 110vh;
     background: rgba(39, 39, 39, 0.4);
 }
-.nav1{
+
+.nav1 {
     position: fixed;
     top: 0;
     display: flex;
     justify-content: space-around;
-    width: 100%;
     height: 100px;
     line-height: 100px;
-    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+    background: linear-gradient(rgba(39, 39, 39, 0.6), transparent);
     z-index: 100;
 }
-.nav-logo p{
+
+.nav-logo p {
     color: white;
     font-size: 25px;
     font-weight: 600;
 }
-.nav-menu ul{
+
+.nav-menu ul {
     display: flex;
 }
-.nav-menu ul li{
+
+.nav-menu ul li {
     list-style-type: none;
 }
-.nav-menu ul li .link{
+
+.nav-menu ul li .link {
     text-decoration: none;
     font-weight: 500;
     color: #fff;
     padding-bottom: 15px;
     margin: 0 25px;
 }
-.link:hover, .active{
+
+.link:hover,
+.active {
     border-bottom: 2px solid #fff;
 }
-.nav-menu-btn{
+
+.nav-menu-btn {
     display: none;
 }
-.form-box{
+
+.form-box {
     position: relative;
     display: flex;
     align-items: center;
@@ -300,7 +336,8 @@ main {
     overflow: hidden;
     z-index: 2;
 }
-.login-container{
+
+.login-container {
     position: absolute;
     left: 4px;
     width: 500px;
@@ -308,7 +345,8 @@ main {
     flex-direction: column;
     transition: .5s ease-in-out;
 }
-.register-container{
+
+.register-container {
     position: absolute;
     right: -520px;
     width: 500px;
@@ -316,29 +354,34 @@ main {
     flex-direction: column;
     transition: .5s ease-in-out;
 }
-.top span{
+
+.top span {
     color: #fff;
     font-size: small;
     padding: 10px 0;
     display: flex;
     justify-content: center;
 }
-.top span a{
+
+.top span a {
     font-weight: 500;
     color: #fff;
     margin-left: 5px;
 }
-header{
+
+header {
     color: #fff;
     font-size: 30px;
     text-align: center;
     padding: 10px 0 30px 0;
 }
-.two-forms{
+
+.two-forms {
     display: flex;
     gap: 10px;
 }
-.input-field{
+
+.input-field {
     font-size: 15px;
     background: rgba(255, 255, 255, 0.2);
     color: #fff;
@@ -350,19 +393,24 @@ header{
     outline: none;
     transition: .2s ease;
 }
-.input-field:hover, .input-field:focus{
+
+.input-field:hover,
+.input-field:focus {
     background: rgba(255, 255, 255, 0.25);
 }
-::-webkit-input-placeholder{
+
+::-webkit-input-placeholder {
     color: #fff;
 }
-.input-box i{
+
+.input-box i {
     position: relative;
     top: -35px;
     left: 17px;
     color: #fff;
 }
-.submit{
+
+.submit {
     font-size: 15px;
     font-weight: 500;
     color: black;
@@ -375,36 +423,44 @@ header{
     cursor: pointer;
     transition: .3s ease-in-out;
 }
-.submit:hover{
+
+.submit:hover {
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
 }
-.two-col{
+
+.two-col {
     display: flex;
     justify-content: space-between;
     color: #fff;
     font-size: small;
     margin-top: 10px;
 }
-.two-col .one{
+
+.two-col .one {
     display: flex;
     gap: 5px;
 }
-.two label a{
+
+.two label a {
     text-decoration: none;
     color: #fff;
 }
-.two label a:hover{
+
+.two label a:hover {
     text-decoration: underline;
 }
-@media only screen and (max-width: 786px){
-    .nav-button{
+
+@media only screen and (max-width: 786px) {
+    .nav-button {
         display: none;
     }
-    .nav-menu.responsive{
+
+    .nav-menu.responsive {
         top: 100px;
     }
-    .nav-menu{
+
+    .nav-menu {
         position: absolute;
         top: -800px;
         display: flex;
@@ -415,14 +471,17 @@ header{
         backdrop-filter: blur(20px);
         transition: .3s;
     }
-    .nav-menu ul{
+
+    .nav-menu ul {
         flex-direction: column;
         text-align: center;
     }
-    .nav-menu-btn{
+
+    .nav-menu-btn {
         display: block;
     }
-    .nav-menu-btn i{
+
+    .nav-menu-btn i {
         font-size: 25px;
         color: #fff;
         padding: 10px;
@@ -431,23 +490,29 @@ header{
         cursor: pointer;
         transition: .3s;
     }
-    .nav-menu-btn i:hover{
+
+    .nav-menu-btn i:hover {
         background: rgba(255, 255, 255, 0.15);
     }
 }
+
 @media only screen and (max-width: 540px) {
-    .wrapper{
+    .wrapper {
         min-height: 100vh;
     }
-    .form-box{
+
+    .form-box {
         width: 100%;
         height: 500px;
     }
-    .register-container, .login-container{
+
+    .register-container,
+    .login-container {
         width: 100%;
         padding: 0 20px;
     }
-    .register-container .two-forms{
+
+    .register-container .two-forms {
         flex-direction: column;
         gap: 0;
     }
