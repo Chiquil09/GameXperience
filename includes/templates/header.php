@@ -55,7 +55,7 @@
         </li>
 
         <li class="bajar">
-          <a href="/iniciarsesion1.php" class="nav-links">
+          <a href="/iniciarsesion.php" class="nav-links">
             <i class="bi bi-braces"></i>
             Login
           </a>
