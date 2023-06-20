@@ -6,7 +6,7 @@
             <div class="nav-menu" id="navMenu">
                 <ul>
                     <li id="loginBtn" onclick="login()"><a href="#" class="link">Iniciar Sesion</a></li>
-                    <li id="registerBtn" onclick="register()"><a href="#" class="link">Registrace</a></li>
+                    <li id="registerBtn" onclick="register()"><a href="#" class="link">Registrarse</a></li>
                 </ul>
 
             </div>
@@ -40,7 +40,7 @@
                     <!------------------- registration form -------------------------->
                     <div class="register-container" id="register">
                         <div class="top">
-                            <header>REGISTRACE</header>
+                            <header>REGISTRARSE</header>
                         </div>
                         <div class="two-forms">
                             <div class="input-box">
