@@ -5,8 +5,8 @@ include("../includes/templates/header.php");
 <main class="contenedor container px-5">
     <h1>Administrador de juegos</h1>
 
-    <a href="admin/crear.php" class="boton boton-verde">Nuevo Juego</a>
-    <a href="admin/vendedores/crear.php" class="boton boton-amarillo">Nuevo Vendedor</a>
+    <a href="/admin/crear.php" class="boton boton-verde">Nuevo Juego</a>
+    <a href="/admin/vendedores.php" class="boton boton-amarillo">Nuevo Vendedor</a>
     <h2>Juegos</h2>
     <table class="propiedades">
         <thead>

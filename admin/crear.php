@@ -4,10 +4,9 @@ include("../includes/templates/header.php");
 <section class="home-section">
 <main class="contenedor container px-5">
     <h1>Administrador de juegos</h1>
+    <a href="/admin/index.php" class="boton boton-verde">Volver</a>
 
-    <a href="admin/propiedades/crear.php" class="boton boton-verde">Nuevo Juego</a>
-    <a href="admin/vendedores/crear.php" class="boton boton-amarillo">Nuevo Vendedor</a>
-    <h2>Juegos</h2>
+    <h2>Crear Juego</h2>
    
     <form>
         <table width="540" >
