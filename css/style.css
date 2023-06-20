@@ -559,7 +559,8 @@ header {
     border-radius: 5px;
     box-shadow: #131313 0 0 1rem;
 }
-.inf{
+
+.inf {
     justify-content: space-between;
 }
 
@@ -567,7 +568,7 @@ header {
     height: 100%;
 }
 
-.parrafo{
+.parrafo {
     justify-content: center;
     padding: 2rem;
     background: var(--gris);
@@ -578,4 +579,128 @@ header {
     padding: 10px;
     background: var(--gris);
     z-index: 10;
+}
+
+
+.boton-amarillo {
+    background-color: #E08709;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    display: inline-block;
+    border: none;
+}
+
+.boton-amarillo:hover {
+    background-color: #c77808;
+    cursor: pointer;
+}
+
+.boton-amarillo-block {
+    background-color: #E08709;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    display: block;
+    border: none;
+}
+
+.boton-amarillo-block:hover {
+    background-color: #c77808;
+    cursor: pointer;
+}
+
+.boton-verde {
+    background-color: #71B100;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    display: inline-block;
+    border: none;
+}
+
+.boton-verde:hover {
+    background-color: #619800;
+    cursor: pointer;
+}
+
+.boton-rojo-block {
+    background-color: rgb(223, 35, 35);
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    display: block;
+    border: none;
+    width: 100%;
+}
+
+.boton-rojo-block:hover {
+    background-color: #cb1e1e;
+    cursor: pointer;
+}
+
+.boton-verde-block {
+    background-color: #71B100;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    display: block;
+    border: none;
+}
+
+.boton-verde-block:hover {
+    background-color: #619800;
+    cursor: pointer;
+}
+
+
+.alerta {
+    padding: 0.5rem;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 1rem 0;
+}
+
+.alerta.error {
+    background-color: rgb(223, 35, 35);
+}
+
+.alerta.exito {
+    background-color: #71B100;
+}
+
+table.propiedades {
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+}
+
+table.propiedades thead {
+    background-color: #3b3b3b;
+}
+
+table.propiedades thead th {
+    color: #FFFFFF;
+    padding: 2rem;
+}
+
+table.propiedades .imagen-tabla {
+    width: 10rem;
 }
