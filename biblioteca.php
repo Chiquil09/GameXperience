@@ -62,7 +62,7 @@
                                         <p class="card-text">Fnaf Security Breach</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>comprar</span></a></button>
+                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>ver</span></a></button>
                                             </div>
                                             <small class="text-body-secondary">$50</small>
                                         </div>
