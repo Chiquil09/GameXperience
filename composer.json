@@ -1,0 +1,19 @@
+{
+    "name": "trabajo/game-xperience",
+    "description": "Creando un proyecto con POO",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Royel2000",
+            "email": "113474109+Royel2000@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7"
+    },
+    "autoload":{
+        "psr-4": {
+            "App\\": "./classes"
+        }
+    } 
+}
