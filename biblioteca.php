@@ -69,6 +69,34 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col">
+                                <div class="carta shadow-sm">
+                                    <img src="imagenes/5fiapcvdzo8.jpg" class="bd-placeholder-img card-img-top" width="100%">
+                                    <div class="card-body">
+                                        <p class="card-text">ARK Survival</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>ver</span></a></button>
+                                            </div>
+                                            <small class="text-body-secondary">$50</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="carta shadow-sm">
+                                    <img src="imagenes/1303642.jpeg" class="bd-placeholder-img card-img-top" width="100%">
+                                    <div class="card-body">
+                                        <p class="card-text">DOOM Eternal</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>ver</span></a></button>
+                                            </div>
+                                            <small class="text-body-secondary">$50</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
