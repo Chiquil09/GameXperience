@@ -76,14 +76,7 @@ include("../includes/templates/header.php");
             <td width="500">Calificacion</td>
             <td width="414"><input type="number" name="calificacion" id="cf" placeholder="Ej: 5" min="1" max="5" ></td>
           </tr>
-
-
         </table>
-        
           <input name="restablecer" type="reset" id="restablecer" value="Restablecer">
           <button type="submit" name="enviar" id="enviar">Registrarse</button>
-        
-      
-
-
         </form>
