@@ -8,8 +8,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
-    $costo = $_POST['costo'];
-    $calificacion = $_POST['calificacion'];
+    $precio = $_POST['precio'];
+    $imagen = $_FILES['imagen'];
+    $poster = $_FILES['poster'];
+   
 
     if (!$nombre){
         $errores[]= "debes añadir un titulo";
@@ -17,17 +19,19 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if (!$descripcion){
         $errores[]= "debes añadir una descripcion";
     }
-    if (!$costo){
+    if (!$precio){
         $errores[]= "debes añadir un precio";
     }
-    if (!$calificacion){
-        $errores[]= "debes añadir una calificacion";
-    }
- 
+   
     if(empty($errores)){
 
     }
-    $query = "INSERT INTO productos (nombre, descripcion, costo, calificacion ) VALUES ( '$nombre', '$descripcion', '$costo', '$calificacion' ) ";
+    $carpetaimagenes= '/imagenes';
+    if(!is_dir($carpetaimagenes)){
+      mkdir($carpetaimagenes);
+    }
+   
+    $query = "INSERT INTO productos (nombre, descripcion, precio ) VALUES ( '$nombre', '$descripcion', '$precio' ) ";
      
      
      $resultado = mysqli_query($db, $query);
@@ -46,7 +50,7 @@ include("../includes/templates/header.php");
 
     <h2>Crear Juego</h2>
    
-    <form method="POST" action="/admin/crear.php">
+    <form method="POST" action="/admin/crear.php" enctype="multipart/form-data">
         <table width="540" >
           <tr valign="top">
             <td width="500">Nombre</td>
@@ -55,7 +59,7 @@ include("../includes/templates/header.php");
           <tr valign="top">
             <td>Imagen:</td>
             
-            <td><input type="file"  id="imagen"  accept="image/jpeg, image/png" ></td>
+            <td><input type="file"  id="imagen"  name="imagen" accept="image/jpeg, image/png" ></td>
           </tr>
           <tr valign="top">
             <td>Descripcion:</td>
@@ -64,18 +68,14 @@ include("../includes/templates/header.php");
           <tr valign="top">
             <td>Poster:</td>
             
-            <td><input type="file"  id="imagen" accept="image/jpeg, image/png"></td>
+            <td><input type="file"  name="poster" id="imagen" accept="image/jpeg, image/png"></td>
           </tr>
 
           <tr valign="top">
             <td width="500">Costo</td>
-            <td width="414"><input type="number" name="costo" id="titulo" placeholder="Precio del juego "maxlength="15"></td>
+            <td width="414"><input type="number" name="precio" id="titulo" placeholder="Precio del juego "maxlength="15"></td>
           </tr>
 
-          <tr valign="top">
-            <td width="500">Calificacion</td>
-            <td width="414"><input type="number" name="calificacion" id="cf" placeholder="Ej: 5" min="1" max="5" ></td>
-          </tr>
         </table>
           <input name="restablecer" type="reset" id="restablecer" value="Restablecer">
           <button type="submit" name="enviar" id="enviar">Registrarse</button>
