@@ -12,7 +12,7 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body class="bg-dark">
+<body>
   <div class="d-f">
     <div class="sidebar d-flex flex-column flex-shrink-0 p-3">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
