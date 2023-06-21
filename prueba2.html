@@ -1,66 +1,124 @@
-Aquí tienes un ejemplo de código HTML que habla sobre una página web, describe su objetivo, de qué trata, qué ofrece y lo entretenido que es:
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Página Web Increíble</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            color: #333;
-            margin: 20px;
-        }
-        
-        h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        ul {
-            margin-bottom: 15px;
-        }
-        
-        footer {
-            background-color: #333;
-            padding: 10px;
-            color: #fff;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <h1>Bienvenido a la Página Web Increíble</h1>
-    
-    <p>¡Te encuentras en una página web realmente especial! Nuestro objetivo principal es brindarte una experiencia en línea única y fascinante.</p>
-    
-    <h2>¿De qué trata?</h2>
-    
-    <p>Esta página web trata sobre diversos temas de interés, incluyendo tecnología, ciencia, arte, viajes, entretenimiento y mucho más. Nuestro objetivo es mantener a nuestros visitantes informados y entretenidos en todo momento.</p>
-    
-    <h2>¿Qué ofrece?</h2>
-    
-    <ul>
-        <li><strong>Artículos:</strong> Encuentra una amplia variedad de artículos interesantes y bien investigados que te mantendrán actualizado en diversos campos.</li>
-        <li><strong>Multimedia:</strong> Disfruta de imágenes, videos y audio relacionados con los temas que abordamos para hacer tu experiencia aún más enriquecedora.</li>
-        <li><strong>Recursos:</strong> Descarga recursos gratuitos, como libros electrónicos, plantillas y herramientas útiles para ayudarte en tus proyectos y actividades diarias.</li>
-        <li><strong>Comunidad:</strong> Únete a nuestra comunidad en línea, interactúa con otros usuarios, comparte tus ideas y participa en emocionantes discusiones.</li>
-    </ul>
-    
-    <h2>¡Descubre la diversión!</h2>
-    
-    <p>Estamos seguros de que te divertirás explorando nuestra página web. Ofrecemos contenido interesante, actividades interactivas y sorpresas ocultas que te mantendrán entretenido durante horas.</p>
-    
-    <footer>
-        <p>© 2023 Página Web Increíble. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
-```
+<?php include 'includes/templates/header.php'; 
 
-Este código HTML crea una página web que habla sobre sí misma. Incluye un encabezado, secciones que describen el objetivo, de qué trata y qué ofrece la página, así como un llamado a la diversión. También tiene un pie de página con derechos reservados. Puedes personalizar los estilos y agregar más contenido según tus necesidades.
+
+require 'includes/config/database.php';
+$conexion = mysqli_connect("localhost", "root", "", "gameperience") ;
+
+$correo = $_POST['correo'];
+$contraseña = $_POST['contraseña'];
+
+
+$query = "INSERT INTO usuarios (correo, contraseña)
+        VALUES ( '$correo', '$contraseña')";  
+
+$consulta="SELECT*FROM usuarios where correo='$correo'";
+$resultado=mysqli_query($conexion,$consulta);
+
+$filas=mysqli_num_rows($resultado);
+
+?>
+
+
+<section class="home-section">
+
+
+    <main>
+        
+    <form method="POST">
+            <div class="wrapper">
+            <nav class="nav1">
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li id="loginBtn" onclick="login()"><a href="#" class="link">Iniciar Sesion</a></li>
+                    <li id="registerBtn" onclick="register()"><a href="#" class="link">Registrarse</a></li>
+                </ul>
+
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+                <!----------------------------- Form box ----------------------------------->
+                <div class="form-box">
+
+                    <!------------------- login form -------------------------->
+
+                    <div class="login-container" id="login">
+                        <div class="top">
+                            <header>INICIAR SESION</header>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" name="correo" class="input-field" placeholder="Email">
+                            <i class="bx bx-user"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" name="contraseña" class="input-field" placeholder="Contraseña">
+                            <i class="bx bx-lock-alt"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="submit" class="submit" value="Registrace">
+                        </div>
+                    </div>
+
+                    <!------------------- registration form -------------------------->
+                    <div class="register-container" id="register">
+                        <div class="top">
+                            <header>REGISTRARSE</header>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" name="correo" class="input-field" placeholder="Email">
+                            <i class="bx bx-envelope"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" name="contraseña" class="input-field" placeholder="Contraseña">
+                            <i class="bx bx-lock-alt"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="submit" class="submit" value="Registrace">
+                        </div>
+                    </div>
+</form>
+                </div>
+            </div>
+
+
+            <script>
+                function myMenuFunction() {
+                    var i = document.getElementById("navMenu1");
+
+                    if (i.className === "nav-menu1") {
+                        i.className += " responsive";
+                    } else {
+                        i.className = "nav-menu1";
+                    }
+                }
+            </script>
+
+            <script>
+                var a = document.getElementById("loginBtn1");
+                var b = document.getElementById("registerBtn1");
+                var x = document.getElementById("login");
+                var y = document.getElementById("register");
+
+                function login() {
+                    x.style.left = "4px";
+                    y.style.right = "-520px";
+                    a.className += " white-btn";
+                    b.className = "btn";
+                    x.style.opacity = 1;
+                    y.style.opacity = 0;
+                }
+
+                function register() {
+                    x.style.left = "-510px";
+                    y.style.right = "5px";
+                    a.className = "btn";
+                    b.className += " white-btn";
+                    x.style.opacity = 0;
+                    y.style.opacity = 1;
+                }
+            </script>
+    </main>
+    <?php include 'includes/templates/footer.php'; ?>
