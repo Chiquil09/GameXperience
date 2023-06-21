@@ -1,5 +1,7 @@
 <?php
-   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$mysqli = new mysqli('localhost', 'root', 'corp92xa', 'gameperience');
+   $conn = new mysqli('localhost','root',"corp92xa","gameperience");
 
+   if($conn->connect_error){
+     echo $error-> $conn->connect_error;
+   }
  ?>
