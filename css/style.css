@@ -826,6 +826,6 @@ table.propiedades .imagen-tabla {
     align-items: center;
 }
 .h22{
-    width: 400px;
-    height: 400px;
+    width: 60rem;
+    margin-top: -100px;
 }
