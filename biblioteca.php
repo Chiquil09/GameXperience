@@ -3,7 +3,7 @@
         <main class="container">
             <div class="form-floating mb-3 d-flex p-2">
                 <input type="text" class="form-control" name="formId1" id="formId1" placeholder="">
-                <label for="formId1">escribir</label>
+                <label for="formId1">escribir.</label>
             </div>
             <div>
                 <div class="album py-5">
