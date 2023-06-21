@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
     $imagen = $_FILES['imagen'];
-    $poster = $_FILES['poster'];
+    $poster = $_FILES['imagenPoster'];
    
 
     if (!$nombre){
@@ -26,12 +26,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(empty($errores)){
 
     }
-    $carpetaimagenes= '/imagenes';
-    if(!is_dir($carpetaimagenes)){
-      mkdir($carpetaimagenes);
-    }
+    $carpetaimagenes= 'imagenes';
+    $nombreimagen= md5( uniqid( rand(), true)) . ".jpg";    
+    move_uploaded_file($imagen['tmp_name'], $carpetaimagenes . $nombreimagen);
+
+    $carpetaposter="imagenes";
+    $nombreposter= md5( uniqid( rand(), true)) . ".jpg";    
+    move_uploaded_file($poster['tmp_name'], $carpetaimagenes . $nombreposter);
+    
    
-    $query = "INSERT INTO productos (nombre, descripcion, precio ) VALUES ( '$nombre', '$descripcion', '$precio' ) ";
+    $query = "INSERT INTO productos (nombre, imagen, descripcion, imagenPoster, precio ) VALUES ( '$nombre', '$nombreimagen', '$descripcion', '$nombreposter', '$precio' ) ";
      
      
      $resultado = mysqli_query($db, $query);
@@ -68,7 +72,7 @@ include("../includes/templates/header.php");
           <tr valign="top">
             <td>Poster:</td>
             
-            <td><input type="file"  name="poster" id="imagen" accept="image/jpeg, image/png"></td>
+            <td><input type="file"  name="imagenPoster" id="poster" accept="image/jpeg, image/png"></td>
           </tr>
 
           <tr valign="top">
