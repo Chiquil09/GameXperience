@@ -48,7 +48,7 @@
         </li>
 
         <li class="bajar">
-          <a href="#" class="nav-links">
+          <a href="/acercade.php" class="nav-links">
             <i class="bi bi-braces"></i>
             Acerca de
           </a>
