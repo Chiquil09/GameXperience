@@ -7,7 +7,7 @@
                 <img src="imagenes/moon.png" id="moon">
                 <img src="imagenes/mountains_behind.png" id="mountains_behind">
                 <h2 id="text">GAMEXPERIENCE</h2>
-                <a href="#sec" id="btn">Explore</a>
+                <a href="#sec" id="btn">Ver mas</a>
                 <img src="imagenes/mountains_front.png" id="mountains_front">
             </section>        
             <div class="sec" id="sec">
@@ -52,7 +52,7 @@
                 moon.style.top = value * 1.05 + 'px';
                 mountains_behind.style.top = value * 0.5 + 'px';
                 mountains_front.style.top = value * 0 + 'px';
-                text.style.marginRight = value * 4 + 'px';
+                text.style.marginRight = value * 3 + 'px';
                 text.style.marginTop = value * 1.5 + 'px';
                 btn.style.marginTop = value * 1.5 + 'px';
             })
