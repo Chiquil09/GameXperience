@@ -1,16 +1,28 @@
 <?php 
 
 include 'includes/funciones/db_conexion.php';
+if(!empty($_GET['nombre'])){
+    $nombre=$_GET['nombre'];
+    $query = 'SELECT * FROM generos WHERE nombre LIKE '.'"%'.$nombre.'%"';
+    //echo $query;
+    $result = $mysqli->execute_query($query);
 
-$id = $_GET['id'];
+    $info=$result->fetch_array(MYSQLI_ASSOC);
+    $mensaje='';
+    if(empty($info)){
+        $mensaje='categoria no encontrada';
+    }
+}else{
+    $id = $_GET['id'];
+    $query = 'SELECT * FROM generos';
+    $result = $mysqli->execute_query($query);
+}
 
-$query = 'SELECT * FROM generos';
-
-$result = $mysqli->execute_query($query);
 
 ?>
 <div class="container" id="custom-cards">
     <h2 class="pb-2 border-bottom">Categorias</h2>
+    <p><?php echo $mensaje; ?></p>
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
         <?php foreach ($result as $value):?>
         <div class="col">
