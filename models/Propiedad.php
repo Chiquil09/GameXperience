@@ -3,66 +3,48 @@
 namespace Model;
 class Propiedad extends ActiveRecord{
     
-    protected static $tabla = ' propiedades';
+    protected static $tabla = 'productos';
     
-    protected static $columnasDB = ["id", "titulo", "precio", "imagen", "descripcion", "habitaciones", "wc", "estacionamiento", "creado", "vendedorId"];
+    protected static $columnasDB = ["id", "nombre", "descripcion", "imagen", "imagenPoster", "precio"];
 
     public $id;
-    public $titulo;
-    public $precio;
-    public $imagen;
+    public $nombre;
     public $descripcion;
-    public $habitaciones;
-    public $wc;
-    public $estacionamiento;
-    public $creado;
-    public $vendedorId;
+    public $imagen;
+    public $imagenPoster;
+    public $precio;
 
     public function __construct($args = [])
     {
         $this->id = $args['id'] ?? null;
-        $this->titulo = $args['titulo'] ?? '';
-        $this->precio = $args['precio'] ?? '';
-        $this->imagen = $args['imagen'] ?? '';
+        $this->nombre = $args['nombre'] ?? '';
         $this->descripcion = $args['descripcion'] ?? '';
-        $this->habitaciones = $args['habitaciones'] ?? '';
-        $this->wc = $args['wc'] ?? '';
-        $this->estacionamiento = $args['estacionamiento'] ?? '';
-        $this->creado = date("Y/m/d");
-        $this->vendedorId = $args['vendedorId'] ?? '';
+        $this->imagen = $args['imagen'] ?? '';
+        $this->imagenPoster = $args['imagenPoster'] ?? '';
+        $this->precio = $args['precio'] ?? '';
     }
 
     public function validar()
     {
 
-        if (!$this->titulo) {
-            self::$errores[] = "Debes añadir un titulo";
+        if (!$this->nombre) {
+            self::$errores[] = "Debes añadir un nombre de juego";
+        }
+
+        if (!$this->descripcion) {
+            self::$errores[] = "La descripcion es obligatoria";
+        }
+
+        if (strlen($this->imagen) < 50) {
+            self::$errores[] = "debes añadir una imagen";
+        }
+
+        if (!$this->imagenPoster) {
+            self::$errores[] = "debes añadir una image para el poster";
         }
 
         if (!$this->precio) {
-            self::$errores[] = "El precio es obligatorio";
-        }
-
-        if (strlen($this->descripcion) < 50) {
-            self::$errores[] = "La descripcion es obligatoria y debe tener al menos 50 caracteres";
-        }
-
-        if (!$this->habitaciones) {
-            self::$errores[] = "El numero de habitaciones es obligatorio";
-        }
-
-        if (!$this->wc) {
-            self::$errores[] = "El numero de Wc es obligatorio";
-        }
-        if (!$this->estacionamiento) {
-            self::$errores[] = "El numero de lugares de estacionamiento es obligatorio";
-        }
-        if (!$this->vendedorId) {
-            self::$errores[] = "Elige un vendedor";
-        }
-
-        if (!$this->imagen) {
-            self::$errores[] = "La imagen de la propiedad es obligatoria";
+            self::$errores[] = "precio";
         }
 
         return self::$errores;

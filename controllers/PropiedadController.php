@@ -3,7 +3,7 @@
 namespace Controllers;
 
 use MVC\Router;
-use Model\Propiedad;
+use Model\Producto;
 use Model\Vendedor;
 use Intervention\Image\ImageManagerStatic as Image;
 
