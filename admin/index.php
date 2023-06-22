@@ -3,7 +3,7 @@ session_start();
 include("../includes/templates/header.php");
 if(empty($_SESSION["permitido"])){
 
-    $url="/index";
+    $url="/";
     $statusCode = 303;
     header('Location: ' . $url, true, $statusCode);
     die;
