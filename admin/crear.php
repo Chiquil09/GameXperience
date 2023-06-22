@@ -14,6 +14,7 @@ if (!empty($_FILES['imagen']['name'])) {
 
         if ($mysqli->query($sql) === TRUE) {
             echo "El juego se creó correctamente.";
+            header('Location: crear2.php');
         } else {
             echo "Error al crear el juego: " . $mysqli->error;
         }
@@ -27,7 +28,7 @@ include("../includes/templates/header.php");
 <section class="home-section">
     <main class="contenedor container px-5">
         <h1>Administrador de juegos</h1>
-        <a href="/admin/index.php" class="boton boton-verde">Volver</a>
+        <a href="/admin/" class="boton boton-verde">Volver</a>
 
         <h2>Crear Juego</h2>
 
@@ -50,7 +51,7 @@ include("../includes/templates/header.php");
 
                 <tr valign="top">
                     <td width="500">Costo</td>
-                    <td width="414"><input type="number" name="precio" id="precio" placeholder="Precio del juego" maxlength="15"></td>
+                    <td width="414"><input type="number" name="precio" id="precio" placeholder="Precio del juego"></td>
                 </tr>
             </table>
             <input name="restablecer" type="reset" id="restablecer" value="Restablecer">
