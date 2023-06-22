@@ -34,14 +34,13 @@ include 'includes/templates/header.php';
                     <h2 class="text-body-secondary">$<?php echo !empty($info)?$info['precio']:' '; ?></h2>
                 </div>
                 <div class="parrafo">
-                    <p><?php echo !empty($info)?$info['descripcion']:' '; ?></p>
-
+                    <textarea disabled><?php echo !empty($info)?$info['descripcion']:' '; ?></textarea>
                 </div>
             </div>
             <div class="c2">
                 <h5>puntuacion:</h5>
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo !empty($info)?$info['puntuacion']*10:' '; ?>%;" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <ul class="py-3">
                     <li class="list-group-item">genero <?php echo !empty($info)?$info['gNombre']:' '; ?></li>

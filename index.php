@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="carousel-item h-100 overflow-hidden text-bg-dark shadow-lg">
-                        <img src="imagenes/Halo-Infinite-en-PC-2021-1.jpg" class="bd-placeholder-img" width="100%" height="100%">
+                        <img src="imagenes/post.jpg" class="bd-placeholder-img" width="100%" height="100%">
                         <div class="container">
                             <div class="carousel-caption text-end">
                                 <h1 class="color">Mejores Graficos</h1>
