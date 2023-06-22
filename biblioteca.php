@@ -1,4 +1,16 @@
-<?php include 'includes/templates/header.php';?>
+<?php 
+
+include 'includes/funciones/db_conexion.php';
+
+$id = $_GET['id'];
+
+$query = 'SELECT * FROM productos';
+
+$result = $mysqli->execute_query($query);
+
+//echo $info['nombre'];
+include 'includes/templates/header.php';
+?>
     <section class="home-section">
         <main class="container">
             <div class="form-floating mb-3 d-flex p-2">
@@ -9,94 +21,24 @@
                 <div class="album py-5">
                     <div class="col">
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                            <div class="col">
-                                <div class="carta shadow-sm">
-                                    <img src="imagenes/Halo-Infinite-en-PC-2021-1.jpg"
-                                        class="bd-placeholder-img card-img-top" width="100%">
-                                    <div class="card-body">
-                                        <p class="card-text">Halo Infinite</p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>ver</span></a></button>
-                                            </div>
-                                            <small class="text-body-secondary">$50</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="carta shadow-sm">
-                                    <img src="imagenes/789573.jpg" class="bd-placeholder-img card-img-top" width="100%">
-                                    <div class="card-body">
-                                        <p class="card-text">God Of War</p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>ver</span></a></button>
-                                            </div>
-                                            <small class="text-body-secondary">$50</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="carta shadow-sm">
-                                    <img src="imagenes/1366_2000.jpg" class="bd-placeholder-img card-img-top"
-                                        width="100%">
-                                    <div class="card-body">
-                                        <p class="card-text">Call Of Duty </p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>ver</span></a></button>
-                                            </div>
-                                            <small class="text-body-secondary">$50</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
+                            <?php foreach ($result as $value):?>
                             <div class="col">
                                 <div class="carta shadow-sm">
-                                    <img src="imagenes/sabine-securitybreach-portfolioporfolio1.jpg"
+                                    <img src="imagenes/<?php echo !empty($value)?$value['imagen']:' '; ?>"
                                         class="bd-placeholder-img card-img-top" width="100%">
                                     <div class="card-body">
-                                        <p class="card-text">Fnaf Security Breach</p>
+                                        <p class="card-text"><?php echo !empty($value)?$value['nombre']:' '; ?></p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>ver</span></a></button>
                                             </div>
-                                            <small class="text-body-secondary">$50</small>
+                                            <small class="text-body-secondary">$<?php echo !empty($value)?$value['precio']:' '; ?></small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="carta shadow-sm">
-                                    <img src="imagenes/5fiapcvdzo8.jpg" class="bd-placeholder-img card-img-top" width="100%">
-                                    <div class="card-body">
-                                        <p class="card-text">ARK Survival</p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>ver</span></a></button>
-                                            </div>
-                                            <small class="text-body-secondary">$50</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="carta shadow-sm">
-                                    <img src="imagenes/1303642.jpeg" class="bd-placeholder-img card-img-top" width="100%">
-                                    <div class="card-body">
-                                        <p class="card-text">DOOM Eternal</p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-sm"><a class="btn1" href="link_name"><span>ver</span></a></button>
-                                            </div>
-                                            <small class="text-body-secondary">$50</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endforeach ?>
                         </div>
                     </div>
                 </div>
