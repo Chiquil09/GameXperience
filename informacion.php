@@ -4,7 +4,7 @@ include 'includes/funciones/db_conexion.php';
 
 $id = $_GET['id'];
 
-$query = 'SELECT productos.nombre AS pNombre, productos.descripcion,productos.imagen, productos.imagenPoster,productos.precio, datos.puntuacion, datos.desarrolador, generos.nombre AS gNombre FROM productos,datos,generos WHERE productos.id=datos.producto_id AND generos.id=datos.genero_id AND datos.producto_id="'.$id.'" limit 1';
+$query = 'SELECT productos.nombre AS pNombre, productos.descripcion,productos.imagen,productos.precio, datos.puntuacion, datos.desarrolador, generos.nombre AS gNombre FROM productos,datos,generos WHERE productos.id=datos.producto_id AND generos.id=datos.genero_id AND datos.producto_id="'.$id.'" limit 1';
 
 $result = $mysqli->execute_query($query);
 $info=null;
@@ -21,7 +21,7 @@ include 'includes/templates/header.php';
     <main>
         <div>
             <div class="section-fade-out">
-                <img src="imagenes/<?php echo !empty($info)?$info['imagenPoster']:' '; ?>" alt="">
+                <img src="imagenes/<?php echo !empty($info)?$info['imagen']:' '; ?>" alt="">
             </div>
         </div>
         <div class="d-flex">
