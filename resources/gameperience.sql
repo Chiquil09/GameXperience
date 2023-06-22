@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-06-2023 a las 00:18:25
+-- Tiempo de generación: 22-06-2023 a las 03:45:42
 -- Versión del servidor: 10.5.20-MariaDB
 -- Versión de PHP: 8.2.7
 
@@ -60,7 +60,7 @@ CREATE TABLE `datos` (
 INSERT INTO `datos` (`id`, `puntuacion`, `desarrolador`, `genero_id`, `producto_id`) VALUES
 (1, '12', 'bungie', 1, 1),
 (2, '4.5', 'mojang', 2, 2),
-(3, '4.3', 'manuelito ayala', 3, 3);
+(3, '4.3', 'manuelito ayala', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -116,7 +116,7 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `correo` varchar(50) NOT NULL,
-  `contraseña` char(60) NOT NULL,
+  `contrasena` char(60) NOT NULL,
   `biblioteca_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -124,8 +124,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contraseña`, `biblioteca_id`) VALUES
-(1, 'angel kau', 'ang738093@gmail.com', '123', 1);
+INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contrasena`, `biblioteca_id`) VALUES
+(1, 'angel kau', 'ang738093@gmail.com', '123', 1),
+(2, 'manuel', 'manuel@gmail.com', '123', 1),
+(3, 'kevin', 'kevin@gmail.com', '123', 1);
 
 --
 -- Índices para tablas volcadas
@@ -197,7 +199,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
