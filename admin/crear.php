@@ -1,29 +1,26 @@
 <?php
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    if(isset($_POST["submit"])){
-    $revisar = getimagesize($_FILES["image"]["tmp_name"]);
-    if($revisar !== false){
-        $image = $_FILES['image']['tmp_name'];
-        $imgContenido = addslashes(file_get_contents($image));
-        
-        //Crear conexion con la abse de datos
-        $db = new mysqli($Host, $Username, $Password, $dbName);
-        
-        // Cerciorar la conexion
-        if($db->connect_error){
-            die("Connection failed: " . $db->connect_error);
+include '../includes/funciones/db_conexion.php';
+
+if (!empty($_FILES['imagen']['name'])) {
+    $nombreArchivo = $_FILES['imagen']['name'];
+    $rutaArchivo = 'imagenes/' . $nombreArchivo;
+
+    $nombre = $_POST['nombre'];
+    $descripcion = $_POST['descripcion'];
+    $precio = $_POST['precio'];
+
+    if (move_uploaded_file($_FILES['imagen']['tmp_name'], '../' . $rutaArchivo)) {
+        $sql = "INSERT INTO productos (nombre, descripcion, imagen, precio) VALUES ('$nombre', '$descripcion', '$nombreArchivo', '$precio')";
+
+        if ($mysqli->query($sql) === TRUE) {
+            echo "El juego se creó correctamente.";
+        } else {
+            echo "Error al crear el juego: " . $mysqli->error;
         }
-        
-        
-        //Insertar imagen en la base de datos
-        $insertar = $db->query("INSERT INTO productos(id, nombre, descripcion, imagen, imagenPoster, precio) VALUES ('$nombre','$descripcion','$imagen','$imagen','$precio')");
-        // COndicional para verificar la subida del fichero
-    } 
-    }else{
-        echo "Por favor seleccione imagen a subir.";
+    } else {
+        echo "Error al subir la imagen.";
     }
 }
-
 
 include("../includes/templates/header.php");
 ?>
@@ -38,29 +35,26 @@ include("../includes/templates/header.php");
             <table width="540">
                 <tr valign="top">
                     <td width="500">Nombre</td>
-                    <td width="414"><input type="text" id="name" name="nombre" placeholder="Nombre "></td>
+                    <td width="414"><input type="text" id="name" name="nombre" placeholder="Nombre"></td>
                 </tr>
+
                 <tr valign="top">
-                    <td>Imagen:</td>
-                    <td><input type="file" id="imagen" name="imagen" accept="image/jpeg, image/png"></td>
-                </tr>
-                <tr valign="top">
-                    <td>Descripcion:</td>
+                    <td>Descripción:</td>
                     <td><textarea id="descripcion" name="descripcion" cols="110" rows="15"></textarea></td>
                 </tr>
-                <tr valign="top">
-                    <td>Poster:</td>
 
-                    <td><input type="file" name="poster" id="poster" accept="image/jpeg, image/png"></td>
+                <tr valign="top">
+                    <td>Imagen:</td>
+                    <td><input type="file" name="imagen"></td>
                 </tr>
 
                 <tr valign="top">
                     <td width="500">Costo</td>
-                    <td width="414"><input type="number" name="precio" id="precio" placeholder="Precio del juego "
-                            maxlength="15"></td>
+                    <td width="414"><input type="number" name="precio" id="precio" placeholder="Precio del juego" maxlength="15"></td>
                 </tr>
-
             </table>
             <input name="restablecer" type="reset" id="restablecer" value="Restablecer">
             <button type="submit" name="enviar" id="enviar">Registrarse</button>
         </form>
+    </main>
+</section>
