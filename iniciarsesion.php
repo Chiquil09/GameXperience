@@ -1,22 +1,6 @@
-<?php include 'includes/templates/header.php'; 
-
-require 'includes/config/database.php';
-$db= conectarDB();
-if($_SERVER('REQUEST_METHOD') === 'POST'){
-    
-    $correo = $_POST['correo'];
-    $contraseña = $_POST['contraseña'];
-}
-
-?>
-
-
+<?php include 'includes/templates/header.php'; ?>
 <section class="home-section">
-
-
     <main>
-        
-    <form method="POST">
             <div class="wrapper">
             <nav class="nav1">
             <div class="nav-menu" id="navMenu">
@@ -41,22 +25,32 @@ if($_SERVER('REQUEST_METHOD') === 'POST'){
                             <header>INICIAR SESION</header>
                         </div>
                         <div class="input-box">
-                            <input type="text" name="correo" class="input-field" placeholder="Email">
+                            <input type="text" class="input-field" placeholder="Email">
                             <i class="bx bx-user"></i>
                         </div>
                         <div class="input-box">
-                            <input type="password" name="contraseña" class="input-field" placeholder="Contraseña">
+                            <input type="password" class="input-field" placeholder="Contraseña">
                             <i class="bx bx-lock-alt"></i>
                         </div>
                         <div class="input-box">
                             <input type="submit" class="submit" value="Registrace">
                         </div>
                     </div>
-</form>
+
                     <!------------------- registration form -------------------------->
                     <div class="register-container" id="register">
                         <div class="top">
                             <header>REGISTRARSE</header>
+                        </div>
+                        <div class="two-forms">
+                            <div class="input-box">
+                                <input type="text" class="input-field" placeholder="Nombre">
+                                <i class="bx bx-user"></i>
+                            </div>
+                            <div class="input-box">
+                                <input type="text" class="input-field" placeholder="Apellido">
+                                <i class="bx bx-user"></i>
+                            </div>
                         </div>
                         <div class="input-box">
                             <input type="text" class="input-field" placeholder="Email">
