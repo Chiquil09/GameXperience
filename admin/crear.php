@@ -1,18 +1,27 @@
 <?php
-
-require '../includes/funciones/db_conexion.php';
-
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-    $nombre = $_POST['nombre'];
-    $descripcion = $_POST['descripcion'];
-    $poster = $_FILES['poster'];
-    $precio = $_POST['precio'];
-    $imagen = ['imagen'];
-
-    $query = "INSERT INTO productos(id, nombre, descripcion, imagen, imagenPoster, precio) VALUES ('$nombre','$descripcion','$imagen','$poster','$precio')";
-
-    print_r($query);
+    if(isset($_POST["submit"])){
+    $revisar = getimagesize($_FILES["image"]["tmp_name"]);
+    if($revisar !== false){
+        $image = $_FILES['image']['tmp_name'];
+        $imgContenido = addslashes(file_get_contents($image));
+        
+        //Crear conexion con la abse de datos
+        $db = new mysqli($Host, $Username, $Password, $dbName);
+        
+        // Cerciorar la conexion
+        if($db->connect_error){
+            die("Connection failed: " . $db->connect_error);
+        }
+        
+        
+        //Insertar imagen en la base de datos
+        $insertar = $db->query("INSERT INTO productos(id, nombre, descripcion, imagen, imagenPoster, precio) VALUES ('$nombre','$descripcion','$imagen','$imagen','$precio')");
+        // COndicional para verificar la subida del fichero
+    } 
+    }else{
+        echo "Por favor seleccione imagen a subir.";
+    }
 }
 
 
