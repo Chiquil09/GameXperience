@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-06-2023 a las 03:45:42
+-- Tiempo de generación: 22-06-2023 a las 23:40:59
 -- Versión del servidor: 10.5.20-MariaDB
 -- Versión de PHP: 8.2.7
 
@@ -58,9 +58,14 @@ CREATE TABLE `datos` (
 --
 
 INSERT INTO `datos` (`id`, `puntuacion`, `desarrolador`, `genero_id`, `producto_id`) VALUES
-(1, '12', 'bungie', 1, 1),
+(1, '7', 'bungie', 1, 1),
 (2, '4.5', 'mojang', 2, 2),
-(3, '4.3', 'manuelito ayala', 1, 3);
+(3, '4.3', 'manuelito ayala', 1, 3),
+(4, '10', 'hasbro', 1, 5),
+(5, '10', 'yo', 1, 6),
+(6, '10', 'Royel', 1, 7),
+(7, '10', 'chiquil', 3, 8),
+(8, '2', 'chiquil', 2, 9);
 
 -- --------------------------------------------------------
 
@@ -91,9 +96,8 @@ INSERT INTO `generos` (`id`, `nombre`) VALUES
 CREATE TABLE `productos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(60) NOT NULL,
-  `descripcion` varchar(100) NOT NULL,
+  `descripcion` blob NOT NULL,
   `imagen` varchar(200) NOT NULL,
-  `imagenPoster` varchar(200) NOT NULL,
   `precio` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -101,10 +105,15 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `imagen`, `imagenPoster`, `precio`) VALUES
-(1, 'Halo infiniy', 'un juego creado especial mente para...', 'img.jpg', 'post.jpg', 200.00),
-(2, 'minecraft', 'un juego de bloques', 'minecraft-swirls-i129032.jpg', 'minecraft-swirls-i129032.jpg', 160.00),
-(3, 'Doom Eternal', 'juego de gerra', '1303642.jpeg', '1303642.jpeg', 300.00);
+INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `imagen`, `precio`) VALUES
+(1, 'Halo infiniy', 0x756e206a7565676f2063726561646f20657370656369616c206d656e746520706172612e2e2e, 'img.jpg', 200.00),
+(2, 'minecraft', 0x756e206a7565676f20646520626c6f71756573, 'minecraft-swirls-i129032.jpg', 160.00),
+(3, 'Doom Eternal', 0x6a7565676f206465206765727261, '1303642.jpeg', 300.00),
+(5, 'Transformers', 0x756e206a7565676f20646520616363696f6e2020646f6e6465206c6120626174616c6c6120706f72206c6f73206175746f626f74732079206c6f73202e2e2e, 'thumb-1920-780071.jpg', 3.00),
+(6, 'rabit', 0x6a6b6466736e646b6a6e736a766e6664736b, 'dibujo.png', 10.00),
+(7, 'progra', 0x6a6d6e73626a64736e616a6b64616e6b646b6c61736a64647361, 'halo-fondos-de-pantalla-xbox.jpg', 100.00),
+(8, 'Blender', 0x756e2070726f6772616d6120706172612064697365c3b161646f726573203344206c6f6b6b6f7064636d6b6c646e766a78666e206d766e20786d2c6620766d2c6378666d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b, 'is-Blender-good-for-2D-Animation_post-4176235159.jpg', 10.00),
+(9, 'toy story', 0x2c6d6e64666b64736e6f7669736e6b76666e766e64666b6d766c66646b6d20766b6d6c646620626b6a6664206e6b6a626e66646b6a76626e64666a6b6e6264666a6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6e6a6a6b6e6a6b6e6b6a0d0a6a6e6b6a6e646a6b6e6b6a6e6b6a6e6a6b6e6b6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a0d0a6a6b68626a6b64626e6b6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a6a, '40157.jpg', 300.00);
 
 -- --------------------------------------------------------
 
@@ -181,7 +190,7 @@ ALTER TABLE `biblioteca`
 -- AUTO_INCREMENT de la tabla `datos`
 --
 ALTER TABLE `datos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `generos`
@@ -193,7 +202,7 @@ ALTER TABLE `generos`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
