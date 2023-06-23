@@ -1,6 +1,6 @@
 <?php
 include '../includes/funciones/db_conexion.php';
-
+include("../includes/templates/header.php");
 if (!empty($_FILES['imagen']['name'])) {
     $nombreArchivo = $_FILES['imagen']['name'];
     $rutaArchivo = 'imagenes/' . $nombreArchivo;
@@ -22,7 +22,7 @@ if (!empty($_FILES['imagen']['name'])) {
 }
 
 
-include("../includes/templates/header.php");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -105,7 +105,7 @@ include("../includes/templates/header.php");
     <section class="home-section">
         <main class="contenedor container px-5">
             <h1>Administrador de juegos</h1>
-            <a href="<?php echo App; ?>/admin/index.php" class="boton boton-verde">Volver</a>
+            <a href="<?php echo App; ?>/admin" class="boton boton-verde">Volver</a>
 
             <h2>Crear Juego</h2>
 

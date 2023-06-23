@@ -1,6 +1,6 @@
 <?php
 include '../includes/funciones/db_conexion.php';
-
+include("../includes/templates/header.php");
 if(!empty($_GET['email'])){
 
     $correo=$_GET["email"];
@@ -28,11 +28,12 @@ if(!empty($_GET['email'])){
         }else{
             $query = 'INSERT INTO usuarios(nombre, correo, contrasena,biblioteca_id) VALUES ("'.$nombre.'","'. $correo.'","'.$password.'", "1")';
             $result = $mysqli->execute_query($query);
-            header('Location: index.php');
+            
+            header('Location: '.App.'/admin');
         }
     }
 }
-include("../includes/templates/header.php");
+
 ?>
 <!DOCTYPE html>
 <html>

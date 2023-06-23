@@ -1,11 +1,11 @@
 <?php
 include '../includes/funciones/db_conexion.php';
-
+include("../includes/templates/header.php");
 // Verificar si se ha enviado un ID válido
 if (!empty($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
     if (!$id) {
-        header('Location: index.php');
+        header('Location: '.App.'/admin');
     }
     
     // Obtener los datos del juego por ID
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $sql = "UPDATE productos SET nombre = '$nombre', descripcion = '$descripcion', imagen = '$nombreArchivo', precio = $precio WHERE id = $id";
 
             if ($mysqli->query($sql) === TRUE) {
-                header('Location: index.php');
+                header('Location: '.App.'/admin');
             } else {
                 echo "Error al actualizar el juego: " . $mysqli->error;
             }
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "UPDATE productos SET nombre = '$nombre', descripcion = '$descripcion', precio = $precio WHERE id = $id";
 
         if ($mysqli->query($sql) === TRUE) {
-            header('Location: index.php');
+            header('Location: '.App.'/admin');
         } else {
             echo "Error al actualizar el juego: " . $mysqli->error;
         }
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-include("../includes/templates/header.php");
+
 ?>
 <!DOCTYPE html>
 <html>

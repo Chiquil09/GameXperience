@@ -1,6 +1,6 @@
 <?php
 include '../includes/funciones/db_conexion.php';
-
+include("../includes/templates/header.php");
 if (!empty($_GET['puntuacion'])) {
     $puntuacion = $_GET['puntuacion'];
     $desarrollador = $_GET['desarrolador'];
@@ -13,7 +13,7 @@ if (!empty($_GET['puntuacion'])) {
 
     if ($mysqli->query($consulta) === TRUE) {
         echo "El juego se creó correctamente.";
-        header('Location: index.php');
+        header('Location: '.App.'/admin');
     } else {
     }
 } else {
@@ -21,7 +21,7 @@ if (!empty($_GET['puntuacion'])) {
     $sql = "SELECT * FROM generos";
     $result = $mysqli->query($sql);
 }
-include("../includes/templates/header.php");
+
 ?>
 <!DOCTYPE html>
 <html>
