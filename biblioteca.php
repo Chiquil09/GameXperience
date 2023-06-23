@@ -2,7 +2,7 @@
 
 include 'includes/funciones/db_conexion.php';
 
-$id = $_GET['id'];
+
 
 $query = 'SELECT * FROM productos';
 
