@@ -46,6 +46,7 @@ if (empty($_SESSION["permitido"])) {
 
         <a href="admin/crear.php" class="boton boton-verde">Nuevo Juego</a>
         <a href="vendedores.php" class="boton boton-verde">Nueva categoria</a>
+        <a href="crearUsuario.php" class="boton boton-verde">Nuevo admin</a>
         <h2 class="mt-5">Juegos</h2>
         <table class="propiedades">
             <thead>
