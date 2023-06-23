@@ -1,5 +1,5 @@
 <?php 
-
+error_reporting(0);
 include 'includes/funciones/db_conexion.php';
 
 $id = $_GET['id'];

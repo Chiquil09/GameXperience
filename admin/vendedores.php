@@ -1,11 +1,27 @@
 <?php
 include("../includes/templates/header.php");
+include '../includes/funciones/db_conexion.php';
+
+if (!empty($_POST['titulo'])) {
+  $nombre = $_POST['titulo'];
+
+  $sql = "INSERT INTO generos (nombre) VALUES ('$nombre')";
+
+  if ($mysqli->query($sql) === TRUE) {
+    echo "El género se creó correctamente";
+    header('Location: index.php');
+    exit;
+  } else {
+    echo "Error al crear el género: " . $mysqli->error;
+  }
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
   <style>
-    
+    /* Estilos con temática y colores neon oscuro */
     body {
       background-color: #000;
       color: #fff;
@@ -84,19 +100,18 @@ include("../includes/templates/header.php");
       <h1>Administrador de juegos</h1>
       <a href="/admin/index.php" class="boton boton-verde">Volver</a>
 
-      <h2>Nueva Categoria</h2>
+      <h2>Nueva Categoría</h2>
 
-      <form>
+      <form method="POST">
         <table width="540">
           <tr valign="top">
             <td width="500">Nombre</td>
-            <td width="414"><input type="text" id="titulo" placeholder="Nombre"></td>
+            <td width="414"><input type="text" id="titulo" name="titulo" placeholder="Nombre "></td>
           </tr>
-          
         </table>
 
         <input name="restablecer" type="reset" id="restablecer" value="Restablecer">
-        <button type="submit" name="enviar" id="enviar">Registrarse</button>
+        <button type="submit" name="enviar" id="enviar">Registrar</button>
       </form>
     </main>
   </section>
