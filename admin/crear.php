@@ -28,9 +28,9 @@ include("../includes/templates/header.php");
 <html>
 
 <head>
-    <title>Título de tu página</title>
+    
     <style>
-        /* Estilos oscuros y elegantes */
+        
         body {
             background-color: #222;
             color: #fff;

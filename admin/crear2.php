@@ -28,9 +28,9 @@ include("../includes/templates/header.php");
 <html>
 
 <head>
-    <title>Título de tu página</title>
+    
     <style>
-        /* Estilos tipo moderno con toque medieval y fondo oscuro */
+    
         body {
             background-color: #222;
             font-family: 'Arial', sans-serif;
