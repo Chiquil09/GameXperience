@@ -32,7 +32,7 @@ include("../includes/templates/header.php");
     <style>
         
         body {
-            background-color: #222;
+            background-color: #101010;
             color: #fff;
         }
 
@@ -43,6 +43,7 @@ include("../includes/templates/header.php");
         .contenedor {
             max-width: 800px;
             margin: 0 auto;
+            background-color: #101010;
         }
 
         h1 {
@@ -132,7 +133,7 @@ include("../includes/templates/header.php");
                     </tr>
                 </table>
                 <input name="restablecer" type="reset" id="restablecer" value="Restablecer">
-                <button type="submit" name="enviar" id="enviar">Registrarse</button>
+                <button type="submit" name="enviar" id="enviar">Siguiente</button>
             </form>
         </main>
     </section>

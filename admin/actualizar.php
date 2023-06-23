@@ -58,8 +58,8 @@ include("../includes/templates/header.php");
     
     <style>
                 
-                body {
-            background-color: #222;
+        body {
+            background-color: #101010;
             color: #fff;
         }
 
@@ -70,6 +70,7 @@ include("../includes/templates/header.php");
         .contenedor {
             max-width: 800px;
             margin: 0 auto;
+            background-color: #101010;
         }
 
         h1 {
@@ -132,7 +133,7 @@ include("../includes/templates/header.php");
     <section class="home-section">
         <main class="contenedor container px-5">
             <h1>Administrador de juegos</h1>
-            <a href="/admin/index.php" class="boton boton-verde">Volver</a>
+            <a href="/admin/index.php" class="boton boton-verde mb-4">Volver</a>
 
             <h2>Actualizar Juego</h2>
 
