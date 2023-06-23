@@ -1,3 +1,7 @@
+<?php
+define("App","/GameXperience");
+
+?>
 <!DOCTYPE html>
 <html data-bs-theme="dark" data-lt-installed="true" lang="en">
 
@@ -26,7 +30,7 @@
 
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="/index.php" class="nav-links active" aria-current="page">
+          <a href="<?php echo App; ?>/index.php" class="nav-links active" aria-current="page">
             <i class="bi bi-house"></i>
             Inicio
           </a>
