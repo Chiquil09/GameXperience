@@ -1,66 +1,34 @@
-Aquí tienes un ejemplo de código HTML que habla sobre una página web, describe su objetivo, de qué trata, qué ofrece y lo entretenido que es:
+<section class="home-section">
+    <main class="contenedor container px-5">
+        <h1>Administrador de juegos</h1>
+        <a href="/admin/index.php" class="boton boton-verde">Volver</a>
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Página Web Increíble</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            color: #333;
-            margin: 20px;
-        }
-        
-        h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        ul {
-            margin-bottom: 15px;
-        }
-        
-        footer {
-            background-color: #333;
-            padding: 10px;
-            color: #fff;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <h1>Bienvenido a la Página Web Increíble</h1>
-    
-    <p>¡Te encuentras en una página web realmente especial! Nuestro objetivo principal es brindarte una experiencia en línea única y fascinante.</p>
-    
-    <h2>¿De qué trata?</h2>
-    
-    <p>Esta página web trata sobre diversos temas de interés, incluyendo tecnología, ciencia, arte, viajes, entretenimiento y mucho más. Nuestro objetivo es mantener a nuestros visitantes informados y entretenidos en todo momento.</p>
-    
-    <h2>¿Qué ofrece?</h2>
-    
-    <ul>
-        <li><strong>Artículos:</strong> Encuentra una amplia variedad de artículos interesantes y bien investigados que te mantendrán actualizado en diversos campos.</li>
-        <li><strong>Multimedia:</strong> Disfruta de imágenes, videos y audio relacionados con los temas que abordamos para hacer tu experiencia aún más enriquecedora.</li>
-        <li><strong>Recursos:</strong> Descarga recursos gratuitos, como libros electrónicos, plantillas y herramientas útiles para ayudarte en tus proyectos y actividades diarias.</li>
-        <li><strong>Comunidad:</strong> Únete a nuestra comunidad en línea, interactúa con otros usuarios, comparte tus ideas y participa en emocionantes discusiones.</li>
-    </ul>
-    
-    <h2>¡Descubre la diversión!</h2>
-    
-    <p>Estamos seguros de que te divertirás explorando nuestra página web. Ofrecemos contenido interesante, actividades interactivas y sorpresas ocultas que te mantendrán entretenido durante horas.</p>
-    
-    <footer>
-        <p>© 2023 Página Web Increíble. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
-```
+        <h2>Crear Juego</h2>
 
-Este código HTML crea una página web que habla sobre sí misma. Incluye un encabezado, secciones que describen el objetivo, de qué trata y qué ofrece la página, así como un llamado a la diversión. También tiene un pie de página con derechos reservados. Puedes personalizar los estilos y agregar más contenido según tus necesidades.
+        <form method="POST" action="/admin/crear.php" enctype="multipart/form-data">
+            <table width="540">
+                <tr valign="top">
+                    <td width="500">Nombre</td>
+                    <td width="414"><input type="text" id="nombre" name="nombre" placeholder="Nombre"></td>
+                </tr>
+
+                <tr valign="top">
+                    <td>Descripción:</td>
+                    <td><textarea id="descripcion" name="descripcion" cols="110" rows="15"></textarea></td>
+                </tr>
+
+                <tr valign="top">
+                    <td>Imagen:</td>
+                    <td><input type="file" name="imagen"></td>
+                </tr>
+
+                <tr valign="top">
+                    <td width="500">Costo</td>
+                    <td width="414"><input type="number" name="precio" id="precio" placeholder="Precio del juego" maxlength="15"></td>
+                </tr>
+            </table>
+            <input name="restablecer" type="reset" id="restablecer" value="Restablecer">
+            <button type="submit" name="enviar" id="enviar">Registrarse</button>
+        </form>
+    </main>
+</section>
