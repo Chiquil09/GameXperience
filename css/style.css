@@ -618,34 +618,89 @@ header {
 }
 
 .boton-amarillo {
-    background-color: #E08709;
-    color: #FFFFFF;
+    background-color: #e08709;
+    border: none;
+    color: #fff;
+    display: inline-block;
     font-weight: 700;
-    text-decoration: none;
+    margin-top: 2.5rem;
     padding: 1rem 3rem;
     text-align: center;
-    margin-top: 2.5rem;
-    display: inline-block;
-    border: none;
-    border-radius: 10px;
+    text-decoration: none
 }
 
 .boton-amarillo:hover {
     background-color: #c77808;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .boton-amarillo-block {
-    background-color: #E08709;
-    color: #FFFFFF;
+    background-color: #e08709;
+    border: none;
+    color: #fff;
+    display: block;
     font-weight: 700;
-    text-decoration: none;
+    margin-top: 2.5rem;
     padding: 1rem 3rem;
     text-align: center;
-    margin-top: 2.5rem;
-    display: block;
+    text-decoration: none
+}
+
+.boton-amarillo-block:hover {
+    background-color: #c77808;
+    cursor: pointer
+}
+
+.boton-verde {
+    background-color: #71b100;
     border: none;
-    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    padding: 1rem 3rem;
+    text-align: center;
+    text-decoration: none
+}
+
+.boton-verde:hover {
+    background-color: #619800;
+    cursor: pointer
+}
+
+.boton-rojo-block {
+    background-color: #df2323;
+    border: none;
+    color: #fff;
+    display: block;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    padding: 1rem 3rem;
+    text-align: center;
+    text-decoration: none;
+    width: 100%
+}
+
+.boton-rojo-block:hover {
+    background-color: #cb1e1e;
+    cursor: pointer
+}
+
+.boton-verde-block {
+    background-color: #71b100;
+    border: none;
+    color: #fff;
+    display: block;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    padding: 1rem 3rem;
+    text-align: center;
+    text-decoration: none
+}
+
+.boton-verde-block:hover {
+    background-color: #619800;
+    cursor: pointer
 }
 
 .boton-amarillo-block:hover {
@@ -726,25 +781,21 @@ header {
 
 .alerta.exito {
     background-color: #71B100;
-    border-radius: 10px;
 }
 
 table.propiedades {
     margin-top: 4rem;
     width: 100%;
     border-spacing: 0;
-    border-radius: 10px;
 }
 
 table.propiedades thead {
     background: #313131;
-    border-radius: 10px;
 }
 
 table.propiedades thead th {
     color: #FFFFFF;
     padding: 2rem;
-    border-radius: 10px;
 }
 
 table.propiedades .imagen-tabla {

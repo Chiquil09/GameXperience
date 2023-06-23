@@ -22,11 +22,11 @@ if (!empty($_FILES['imagen']['name'])) {
     }
 }
 
+
 include("../includes/templates/header.php");
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     
     <style>
@@ -101,7 +101,6 @@ include("../includes/templates/header.php");
         }
     </style>
 </head>
-
 <body>
     <section class="home-section">
         <main class="contenedor container px-5">
