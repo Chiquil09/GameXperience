@@ -13,9 +13,8 @@ if (!empty($_GET['puntuacion'])) {
 
     if ($mysqli->query($consulta) === TRUE) {
         echo "El juego se creó correctamente.";
-        header('Location: <?php echo App; ?>/admin/');
+        header('Location: index.php');
     } else {
-        echo "Error al crear el juego: " . $mysqli->error;
     }
 } else {
 

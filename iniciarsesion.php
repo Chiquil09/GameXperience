@@ -69,7 +69,7 @@ if(($result->num_rows > 0)){
                     <div class="login-container" id="login">
                         <form action="iniciarsesion.php">
                         <div class="top">
-                            <header>INICIAR SESION</header>
+                            <header>Acceder a Admin</header>
                         </div>
                         <div class="input-box">
                             <input id="email" name="email" type="text" class="input-field" placeholder="Email">
@@ -80,7 +80,7 @@ if(($result->num_rows > 0)){
                             <i class="bx bx-lock-alt"></i>
                         </div>
                         <div class="input-box">
-                            <input id="registance" type="submit" class="submit" value="Registrace">
+                            <input id="registance" type="submit" class="submit" value="Acceder">
                         </div>
                         </form>
                     </div>
