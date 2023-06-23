@@ -99,7 +99,16 @@ include 'includes/templates/header.php';
                                 <a class="nav-link disabled"><strong>Desarrollador: </strong><?php echo !empty($info) ? $info['desarrolador'] : ' '; ?></a>
                             </li>
                         </ul>
+                        <ul class="nav justify-content-center  ">
+                            <li class="nav-item">
+                                <a class="nav-link"><i class="bi bi-hand-thumbs-down"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"><i class="bi bi-hand-thumbs-up-fill"></i></a>
+                            </li>
+                        </ul>
                     </div>
+
                 </div>
 
             </div>

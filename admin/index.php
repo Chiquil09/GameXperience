@@ -68,14 +68,11 @@ if (empty($_SESSION["permitido"])) {
                         <th><?php echo $productos['precio']; ?></th>
                         <th>
                             <a href="admin/actualizar.php?id=<?php echo $productos['id'];?>" class="boton-verde-block">
-                            Actualizar</a>
+                            Actualizar <i class="bi bi-arrow-up-square-fill"></i></a>
                             <br>
                             <form method="POST" class="w-100">
-
                                 <input type="hidden" name="id" value="<?php echo $productos['id']; ?>">
-
                                 <input type="submit" class="boton-rojo-block" value="Eliminar" class="w-100">
-
                             </form>
                         </th>
                     </tr>

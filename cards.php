@@ -15,7 +15,7 @@ $result = $mysqli->execute_query($query);
         <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
             <div class="col">
                 <div class="rounded-4 p-5 hover" style="background: var(--fondo);">
-                    <p>GameXperience es una página web dedicada a brindar informacion de juegos como:</p>
+                    <p>GameXperience es una página web dedicada a brindar informacion de juegos como <i class="bi bi-arrow-right"></i></p>
                 </div>
             </div>
             <div class="col">
@@ -51,7 +51,9 @@ $result = $mysqli->execute_query($query);
                             <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><?php echo !empty($value) ? $value['nombre'] : ' '; ?></h3>
                             <ul class="d-flex list-unstyled mt-auto">
                                 <li class="me-auto">
-                                    <img src="imagenes/<?php echo !empty($value) ? $value['imagen'] : ' '; ?>" width="32" height="32" class="rounded-circle border border-white">
+                                    <i class="bi bi-controller p-2"></i>
+                                    <i class="bi bi-cpu p-2"></i>
+                                    <i class="bi bi-discord p-2"></i>
                                 </li>
                                 <li class="d-flex align-items-center me-3">
                                     <small>$<?php echo !empty($value) ? $value['precio'] : ' '; ?></small>

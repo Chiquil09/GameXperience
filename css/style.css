@@ -177,6 +177,12 @@ footer {
 .carta img {
     border-radius: 0px 10px;
 }
+.card{
+    transition: 0.2s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.05);
+}
 
 .img-z {
     width: 20rem;
