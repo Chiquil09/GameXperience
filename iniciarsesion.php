@@ -52,7 +52,7 @@ if(($result->num_rows > 0)){
             <div class="nav-menu" id="navMenu">
                 <ul>
                     <li id="loginBtn" onclick="login()"><a href="#" class="link">Iniciar Sesion</a></li>
-                    <li id="registerBtn" onclick="register()"><a href="#" class="link">Registrarse</a></li>
+                   <!--  <li id="registerBtn" onclick="register()"><a href="#" class="link">Registrarse</a></li> -->
                 </ul>
 
             </div>
@@ -86,7 +86,7 @@ if(($result->num_rows > 0)){
                     </div>
 
                     <!------------------- registration form -------------------------->
-                    <div class="register-container" id="register">
+<!--                     <div class="register-container" id="register">
                         <form action="iniciarsesion.php">
                         <div class="top">
                             <header>REGISTRARSE</header>
@@ -113,7 +113,7 @@ if(($result->num_rows > 0)){
                             <input type="submit" class="submit" value="Registrace">
                         </div>
                          </form>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 

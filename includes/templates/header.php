@@ -45,13 +45,6 @@ define("App","/GameXperience");
         <hr class="custom-hr ">
 
         <li class="bajar">
-          <a href="<?php echo App; ?>/biblioteca.php" class="nav-links">
-            <i class="bi bi-bookmark-fill"></i>
-            Biblioteca
-          </a>
-        </li>
-
-        <li class="bajar">
           <a href="<?php echo App; ?>/acercade.php" class="nav-links">
             <i class="bi bi-braces"></i>
             Acerca de
