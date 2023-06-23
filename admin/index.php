@@ -44,8 +44,8 @@ if (empty($_SESSION["permitido"])) {
     <main class="contenedor container px-5">
         <h1>Bienvenido: <?php echo "" . $_SESSION['permitido']; ?></h1>
 
-        <a href="/admin/crear.php" class="boton boton-verde">Nuevo Juego</a>
-        <a href="/admin/vendedores.php" class="boton boton-verde">Nueva categoria</a>
+        <a href="admin/crear.php" class="boton boton-verde">Nuevo Juego</a>
+        <a href="admin/vendedores.php" class="boton boton-verde">Nueva categoria</a>
         <h2 class="mt-5">Juegos</h2>
         <table class="propiedades">
             <thead>
@@ -63,10 +63,10 @@ if (empty($_SESSION["permitido"])) {
                     <tr>
                         <th><?php echo $productos['id']; ?></th>
                         <th><?php echo $productos['nombre']; ?></th>
-                        <th><img src="/imagenes/<?php echo $productos['imagen']; ?>" class="imagen-tabla"></th>
+                        <th><img src="<?php echo App; ?>/imagenes/<?php echo $productos['imagen']; ?>" class="imagen-tabla"></th>
                         <th><?php echo $productos['precio']; ?></th>
                         <th>
-                            <a href="/admin/actualizar.php?id=<?php echo $productos['id'];?>" class="boton-verde-block">
+                            <a href="actualizar.php?id=<?php echo $productos['id'];?>" class="boton-verde-block">
                             Actualizar</a>
                             <br>
                             <form method="POST" class="w-100">

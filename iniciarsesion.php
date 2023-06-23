@@ -15,7 +15,7 @@ $info=$result->fetch_array(MYSQLI_ASSOC);
 if (!empty($info)){
     $_SESSION["permitido"]=$info['correo'];
     $_SESSION['rol']='admin';
-    $url="/admin";
+    $url="admin";
     $statusCode = 303;
     header('Location: ' . $url, true, $statusCode);
 }
@@ -67,7 +67,7 @@ if(($result->num_rows > 0)){
                     <!------------------- login form -------------------------->
 
                     <div class="login-container" id="login">
-                        <form action="/iniciarsesion.php">
+                        <form action="iniciarsesion.php">
                         <div class="top">
                             <header>INICIAR SESION</header>
                         </div>
@@ -87,7 +87,7 @@ if(($result->num_rows > 0)){
 
                     <!------------------- registration form -------------------------->
                     <div class="register-container" id="register">
-                        <form action="/iniciarsesion.php">
+                        <form action="iniciarsesion.php">
                         <div class="top">
                             <header>REGISTRARSE</header>
                         </div>

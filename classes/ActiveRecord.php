@@ -49,7 +49,7 @@ class ActiveRecord{
         //MENSAJE DE EXITO
         if ($resultado) {
             //REDIRECCIONAR AL USUARIO. EN LA REDIRECCION PREVIAMENTE NO PUEDE HABER CODIGO HTML
-            header("Location: /admin?resultado=1");
+            header("Location: <?php echo App; ?>/admin?resultado=1");
         }
     }
     public function actualizar()
@@ -68,7 +68,7 @@ class ActiveRecord{
 
         if ($resultado) {
             //REDIRECCIONAR AL USUARIO. EN LA REDIRECCION PREVIAMENTE NO PUEDE HABER CODIGO HTML
-            header("Location: /admin?resultado=2");
+            header("Location: <?php echo App; ?>/admin?resultado=2");
         }
     }
 
@@ -80,7 +80,7 @@ class ActiveRecord{
         $resultado = self::$db->query($query);
         if ($resultado) {
             $this->borrarImagen();
-            header("location: /admin?resultado=3");
+            header("location: <?php echo App; ?>/admin?resultado=3");
         }
     }
 

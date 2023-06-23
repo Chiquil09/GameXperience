@@ -2,8 +2,6 @@
 
 include 'includes/funciones/db_conexion.php';
 
-
-
 $query = 'SELECT * FROM productos';
 
 $result = $mysqli->execute_query($query);

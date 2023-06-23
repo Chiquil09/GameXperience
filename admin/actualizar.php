@@ -29,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $sql = "UPDATE productos SET nombre = '$nombre', descripcion = '$descripcion', imagen = '$nombreArchivo', precio = $precio WHERE id = $id";
 
             if ($mysqli->query($sql) === TRUE) {
-                echo "El juego se actualizó correctamente.";
                 header('Location: index.php');
             } else {
                 echo "Error al actualizar el juego: " . $mysqli->error;
@@ -41,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "UPDATE productos SET nombre = '$nombre', descripcion = '$descripcion', precio = $precio WHERE id = $id";
 
         if ($mysqli->query($sql) === TRUE) {
-            echo "El juego se actualizó correctamente.";
             header('Location: index.php');
         } else {
             echo "Error al actualizar el juego: " . $mysqli->error;
@@ -133,7 +131,7 @@ include("../includes/templates/header.php");
     <section class="home-section">
         <main class="contenedor container px-5">
             <h1>Administrador de juegos</h1>
-            <a href="/admin/index.php" class="boton boton-verde mb-4">Volver</a>
+            <a href="admin/" class="boton boton-verde mb-4">Volver</a>
 
             <h2>Actualizar Juego</h2>
 

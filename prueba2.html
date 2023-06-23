@@ -1,11 +1,11 @@
 <section class="home-section">
     <main class="contenedor container px-5">
         <h1>Administrador de juegos</h1>
-        <a href="/admin/index.php" class="boton boton-verde">Volver</a>
+        <a href="<?php echo App; ?>/admin<?php echo App; ?>/index.php" class="boton boton-verde">Volver</a>
 
         <h2>Crear Juego</h2>
 
-        <form method="POST" action="/admin/crear.php" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo App; ?>/admin/crear.php" enctype="multipart/form-data">
             <table width="540">
                 <tr valign="top">
                     <td width="500">Nombre</td>

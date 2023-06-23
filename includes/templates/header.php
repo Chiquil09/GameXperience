@@ -1,3 +1,7 @@
+<?php
+define("App","/GameXperience");
+
+?>
 <!DOCTYPE html>
 <html data-bs-theme="dark" data-lt-installed="true" lang="en">
 
@@ -5,7 +9,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GameXperience</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="<?php echo App; ?>/css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   
@@ -26,13 +30,13 @@
 
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="/index.php" class="nav-links active" aria-current="page">
+          <a href="<?php echo App; ?>/index.php" class="nav-links active" aria-current="page">
             <i class="bi bi-house"></i>
             Inicio
           </a>
         </li>
         <li class="bajar">
-          <a href="/buscar.php" class="nav-links">
+          <a href="<?php echo App; ?>/buscar.php" class="nav-links">
             <i class="bi bi-search"></i>
             Buscar
           </a>
@@ -41,21 +45,21 @@
         <hr class="custom-hr ">
 
         <li class="bajar">
-          <a href="/biblioteca.php" class="nav-links">
+          <a href="<?php echo App; ?>/biblioteca.php" class="nav-links">
             <i class="bi bi-bookmark-fill"></i>
             Biblioteca
           </a>
         </li>
 
         <li class="bajar">
-          <a href="/acercade.php" class="nav-links">
+          <a href="<?php echo App; ?>/acercade.php" class="nav-links">
             <i class="bi bi-braces"></i>
             Acerca de
           </a>
         </li>
 
         <li class="bajar">
-          <a href="/iniciarsesion.php" class="nav-links">
+          <a href="<?php echo App; ?>/iniciarsesion.php" class="nav-links">
             <i class="bi bi-braces"></i>
             Login
           </a>

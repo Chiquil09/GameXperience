@@ -1,6 +1,6 @@
 <?php
 include '../includes/funciones/db_conexion.php';
-
+include("../includes/templates/header.php");
 if (!empty($_GET['nombre'])) {
     $nombre = $_GET['nombre'];
 
@@ -8,12 +8,11 @@ if (!empty($_GET['nombre'])) {
 
     if ($mysqli->query($sql) === TRUE) {
         echo "Exito";
-        header('Location: index.php');
+        header('Location: '.App.'/admin');
     } else {
         echo "Error al crear la categoria: " . $mysqli->error;
     }
 }
-include("../includes/templates/header.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -95,7 +94,7 @@ include("../includes/templates/header.php");
 <section class="home-section">
 <main class="contenedor container px-5">
     <h1>Crear</h1>
-    <a href="/admin/index.php" class="boton boton-verde mb-4">Volver</a>
+    <a href="index.php" class="boton boton-verde mb-4">Volver</a>
 
     <h2>Nueva Categoria</h2>
    
