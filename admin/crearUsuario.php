@@ -126,7 +126,7 @@ if(!empty($_GET['email'])){
                     <input id="password" name="password" type="password" class="input-field" placeholder="Contraseña">
                 </div>
                 <div class="input-box my-2">
-                    <input type="submit" class="submit" value="Registrace">
+                    <input type="submit" class="submit" value="Registrar">
                 </div>
             </form>
         </main>
