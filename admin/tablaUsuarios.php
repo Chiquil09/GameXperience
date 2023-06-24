@@ -1,10 +1,34 @@
+<?php
+// Importar base de datos
+include '../includes/funciones/db_conexion.php';
+
+// Escribir el Query
+$query = "SELECT * FROM usuarios";
+
+//Consultar la BD
+$resultado = $mysqli->execute_query($query);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id = $_POST['id'];
+    $id = filter_var($id, FILTER_VALIDATE_INT);
+
+    if ($id) {
+        //elimina la propiedad
+        $query = "DELETE FROM usuarios WHERE id = {$id}";
+        $resultado = $mysqli->execute_query($query);
+
+        if ($resultado) {
+            header('Location: ' . App . '/admin');
+        }
+    }
+}
+?>
 <table class="propiedades">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Titulo</th>
-                    <th>Imagen</th>
-                    <th>Precio</th>
+                    <th>nombre</th>
+                    <th>correo</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -14,10 +38,9 @@
                     <tr>
                         <th><?php echo $productos['id']; ?></th>
                         <th><?php echo $productos['nombre']; ?></th>
-                        <th><img src="<?php echo App; ?>/imagenes/<?php echo $productos['imagen']; ?>" class="imagen-tabla"></th>
-                        <th><?php echo $productos['precio']; ?></th>
+                        <th><?php echo $productos['correo']; ?></th>
                         <th>
-                            <a href=" <?php echo App; ?>/admin/actualizar.php?id=<?php echo $productos['id'];?>" class="boton-verde-block">
+                            <a href=" <?php echo App; ?>/admin/actualizarUsuario.php?id=<?php echo $productos['id'];?>" class="boton-verde-block">
                             Actualizar <i class="bi bi-arrow-up-square-fill"></i></a>
                             <br>
                             <form method="POST" class="w-100">

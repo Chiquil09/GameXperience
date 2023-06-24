@@ -82,10 +82,7 @@ if (empty($_SESSION["permitido"])) {
         </table>
 
         <?php
-        include("tablaUsuarios.php");
-
-
-
+        include"tablaUsuarios.php";
         ?>
     </main>
 
