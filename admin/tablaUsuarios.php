@@ -13,14 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = filter_var($id, FILTER_VALIDATE_INT);
 
     if ($id) {
-        //elimina la propiedad
+        //elimina el usuario
         $query = "DELETE FROM usuarios WHERE id = {$id}";
         $resultado = $mysqli->execute_query($query);
 
-        if ($resultado) {
-            header('Location: ' . App . '/admin');
-        }
     }
+    header('Location: index.php');
 }
 ?>
 <table class="propiedades">
@@ -43,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <a href=" <?php echo App; ?>/admin/actualizarUsuario.php?id=<?php echo $productos['id'];?>" class="boton-verde-block">
                             Actualizar <i class="bi bi-arrow-up-square-fill"></i></a>
                             <br>
-                            <form method="POST" class="w-100">
+                            <form method="POST" class="w-100" action="<?php echo App; ?>/admin/tablaUsuarios.php">
                                 <input type="hidden" name="id" value="<?php echo $productos['id']; ?>">
                                 <input type="submit" class="boton-rojo-block" value="Eliminar" class="w-100">
                             </form>

@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <h2>Actualizar </h2>
 
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST">
                 <table width="540">
 
                     <tr class="input-box">
