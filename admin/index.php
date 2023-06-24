@@ -9,20 +9,19 @@ $query = "SELECT * FROM productos";
 //Consultar la BD
 $resultado = $mysqli->execute_query($query);
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
     $id = filter_var($id, FILTER_VALIDATE_INT);
-    
-    if($id){
+
+    if ($id) {
         //elimina la propiedad
         $query = "DELETE FROM productos WHERE id = {$id}";
         $resultado = $mysqli->execute_query($query);
 
-        if($resultado){
-            header('Location: '.App.'/admin');
+        if ($resultado) {
+            header('Location: ' . App . '/admin');
         }
     }
-    
 }
 
 session_start();
@@ -67,8 +66,8 @@ if (empty($_SESSION["permitido"])) {
                         <th><img src="<?php echo App; ?>/imagenes/<?php echo $productos['imagen']; ?>" class="imagen-tabla"></th>
                         <th><?php echo $productos['precio']; ?></th>
                         <th>
-                            <a href=" <?php echo App; ?>/admin/actualizar.php?id=<?php echo $productos['id'];?>" class="boton-verde-block">
-                            Actualizar <i class="bi bi-arrow-up-square-fill"></i></a>
+                            <a href=" <?php echo App; ?>/admin/actualizar.php?id=<?php echo $productos['id']; ?>" class="boton-verde-block">
+                                Actualizar <i class="bi bi-arrow-up-square-fill"></i></a>
                             <br>
                             <form method="POST" class="w-100">
                                 <input type="hidden" name="id" value="<?php echo $productos['id']; ?>">
@@ -81,6 +80,13 @@ if (empty($_SESSION["permitido"])) {
 
             </tbody>
         </table>
+
+        <?php
+        include("tablaUsuarios.php");
+
+
+
+        ?>
     </main>
 
     <?php
@@ -88,4 +94,5 @@ if (empty($_SESSION["permitido"])) {
     mysqli_close($mysqli);
 
     include("../includes/templates/footer.php");
+
     ?>
