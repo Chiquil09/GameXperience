@@ -16,7 +16,7 @@ if(!empty($result)){
 
 include 'includes/templates/header.php';
 ?>
-<section class="home-section">
+<section>
     <main>
         <div>
             <div class="section-fade-out">

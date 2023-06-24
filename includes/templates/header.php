@@ -1,5 +1,5 @@
 <?php
-define("App","/GameXperience");
+define("App", "/GameXperience");
 
 ?>
 <!DOCTYPE html>
@@ -10,54 +10,54 @@ define("App","/GameXperience");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GameXperience</title>
   <link rel="stylesheet" href="<?php echo App; ?>/css/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="<?php echo App; ?>/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  
+
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-  <div class="d-f">
-    <div class="sidebar d-flex flex-column flex-shrink-0 p-3">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        <svg class="bi pe-none me-2" width="40" height="32">
-          <use xlink:href="" />
-        </svg>
-        <span class="fs-4">GameXperience</span>
+  <div class="menu">
+    <button class="btn btn-primary fixed-top" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+      <i class="bi bi-list"></i>
+    </button>
+  </div>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <a class="navbar-brand" href="<?php echo App; ?>/">
+        <img src="imagenes/lo.png" alt="Logo" width="50" class="d-inline-block align-text-top">
+        GameXperience
       </a>
-      <br>
-      <br>
+    </div>
+    <div class="offcanvas-body">
 
       <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <a href="<?php echo App; ?>/index.php" class="nav-links active" aria-current="page">
+        <li class="nav-item mt-3">
+          <a href="<?php echo App; ?>/index.php" class="nav-link" aria-current="page">
             <i class="bi bi-house"></i>
             Inicio
           </a>
         </li>
-        <li class="bajar">
-          <a href="<?php echo App; ?>/buscar.php" class="nav-links">
+        <li class="mt-3">
+          <a href="<?php echo App; ?>/buscar.php" class="nav-link">
             <i class="bi bi-search"></i>
             Buscar
           </a>
         </li>
-
-        <hr class="custom-hr ">
-
-        <li class="bajar">
-          <a href="<?php echo App; ?>/acercade.php" class="nav-links">
+        <li class="mt-3">
+          <a href="<?php echo App; ?>/acercade.php" class="nav-link">
             <i class="bi bi-braces"></i>
             Acerca de
           </a>
         </li>
-
-        <li class="bajar">
-          <a href="<?php echo App; ?>/iniciarsesion.php" class="nav-links">
+        <li class="mt-3">
+          <a href="<?php echo App; ?>/iniciarsesion.php" class="nav-link">
             <i class="bi bi-braces"></i>
             Login
           </a>
         </li>
       </ul>
-      <div class="dropdown">
-      </div>
+
     </div>
+  </div>

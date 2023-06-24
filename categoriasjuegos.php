@@ -27,7 +27,7 @@ if (!empty($_GET['nombre'])) {
         <?php foreach ($result as $value) : ?>
             <div class="col">
                 <a href="clasificacion.php?id=<?php echo !empty($value) ? $value['id'] : ' '; ?>" class="a">
-                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url(imagenes/monumento.png);">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
                         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                             <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><?php echo !empty($value) ? $value['nombre'] : ' '; ?></h3>
                         </div>

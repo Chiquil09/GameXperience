@@ -39,50 +39,49 @@ if (empty($_SESSION["permitido"])) {
     }
 }
 ?>
-<section class="home-section">
+<section class="">
     <main class="contenedor container px-5">
         <h1>Bienvenido: <?php echo "" . $_SESSION['permitido']; ?></h1>
 
-        <a href="<?php echo App; ?>/admin/crear.php" class="boton boton-verde">Nuevo Juego</a>
-        <a href="<?php echo App; ?>/admin/vendedores.php" class="boton boton-verde">Nueva categoria</a>
-        <a href="<?php echo App; ?>/admin/crearUsuario.php" class="boton boton-verde">Nuevo admin</a>
+        <a href="<?php echo App; ?>/admin/crear.php" class="boton boton-verde shadow-sm p-3 mb-5">Nuevo Juego</a>
+        <a href="<?php echo App; ?>/admin/vendedores.php" class="boton boton-verde shadow-sm p-3 mb-5">Nueva categoria</a>
+        <a href="<?php echo App; ?>/admin/crearUsuario.php" class="boton boton-verde shadow-sm p-3 mb-5">Nuevo admin</a>
         <h2 class="mt-5">Juegos</h2>
-        <table class="propiedades">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Titulo</th>
-                    <th>Imagen</th>
-                    <th>Precio</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-
-            <tbody> <!--MOSTRAR LOS RESULTADOS -->
-                <?php while ($productos = mysqli_fetch_assoc($resultado)) : ?>
+        <div class="table-responsive">
+            <table class="table table-dark table-striped propiedades">
+                <thead>
                     <tr>
-                        <th><?php echo $productos['id']; ?></th>
-                        <th><?php echo $productos['nombre']; ?></th>
-                        <th><img src="<?php echo App; ?>/imagenes/<?php echo $productos['imagen']; ?>" class="imagen-tabla"></th>
-                        <th><?php echo $productos['precio']; ?></th>
-                        <th>
-                            <a href=" <?php echo App; ?>/admin/actualizar.php?id=<?php echo $productos['id']; ?>" class="boton-verde-block">
-                                Actualizar <i class="bi bi-arrow-up-square-fill"></i></a>
-                            <br>
-                            <form method="POST" class="w-100">
-                                <input type="hidden" name="id" value="<?php echo $productos['id']; ?>">
-                                <input type="submit" class="boton-rojo-block" value="Eliminar" class="w-100">
-                            </form>
-                        </th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Acciones</th>
                     </tr>
-                <?php endwhile; ?>
+                </thead>
 
+                <tbody> <!--MOSTRAR LOS RESULTADOS -->
+                    <?php while ($productos = mysqli_fetch_assoc($resultado)) : ?>
+                        <tr>
+                            <th><?php echo $productos['id']; ?></th>
+                            <th><?php echo $productos['nombre']; ?></th>
+                            <th><img src="<?php echo App; ?>/imagenes/<?php echo $productos['imagen']; ?>" class="imagen-tabla rounded"></th>
+                            <th><?php echo $productos['precio']; ?></th>
+                            <th>
+                                <a href="<?php echo App; ?>/admin/actualizar.php?id=<?php echo $productos['id']; ?>" class="btn border shadow-sm p-3 mb-5" role="button">
+                                    Actualizar</a>
+                                <form method="POST" class="w-100">
+                                    <input type="hidden" name="id" value="<?php echo $productos['id']; ?>">
+                                    <input type="submit" class="btn btn-danger shadow-sm p-3 mb-5" value="Eliminar" class="w-100">
+                                </form>
+                            </th>
+                        </tr>
+                    <?php endwhile; ?>
 
-            </tbody>
-        </table>
-
+                </tbody>
+            </table>
+        </div>
         <?php
-        include"tablaUsuarios.php";
+        include "tablaUsuarios.php";
         ?>
     </main>
 

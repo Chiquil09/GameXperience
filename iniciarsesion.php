@@ -41,7 +41,7 @@ if (empty($_GET['nombre'])) {
 //unset($_SESSION["permitido"]);
 ?>
 <?php include 'includes/templates/header.php'; ?>
-<section class="home-section">
+<section>
     <main>
         <div class="wrapper">
             <nav class="nav1">

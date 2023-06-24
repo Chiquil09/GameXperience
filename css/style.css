@@ -135,17 +135,6 @@ footer {
     margin-top: 20px;
 }
 
-.custom-hr {
-    border: none;
-    /* Elimina el borde predeterminado */
-    height: 5px;
-    /* Establece la altura deseada */
-    background-color: #000;
-    /* Establece el color de fondo */
-    margin: 50px 0px;
-    /* Ajusta los márgenes superior e inferior según sea necesario */
-}
-
 @keyframes c-color {
     0% {
         background-color: #ff009d;
@@ -389,11 +378,6 @@ footer {
     margin: 0 25px;
 }
 
-.link:hover,
-.active {
-    border-bottom: 2px solid #fff;
-}
-
 .nav-menu-btn {
     display: none;
 }
@@ -441,12 +425,6 @@ footer {
     margin-left: 5px;
 }
 
-header {
-    color: #fff;
-    font-size: 30px;
-    text-align: center;
-    padding: 10px 0 30px 0;
-}
 
 .two-forms {
     display: flex;
@@ -845,9 +823,6 @@ table.propiedades .imagen-tabla {
 }
 
 /*  estilos acerca de */
-* {
-    scroll-behavior: smooth;
-}
 
 .body {
     min-height: 100vh;

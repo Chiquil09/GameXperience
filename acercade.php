@@ -1,5 +1,5 @@
 <?php include 'includes/templates/header.php'; ?>
-<section class="home-section">
+<section>
     <main>
         <div class="body">
             <section class="k">
@@ -7,7 +7,7 @@
                 <img src="imagenes/city2.png" id="moon">
                 <img src="imagenes/cityfloat.png" id="mountains_behind">
                 <h2 id="text">GAMEXPERIENCE</h2>
-                <a href="#sec" id="btn">Ver mas</a>
+                <a href="<?php echo App; ?>/index.php" id="btn">volver al inicio</a>
                 <img src="imagenes/clouds.png" id="mountains_front">
             </section>
             <div class="sec" id="sec">

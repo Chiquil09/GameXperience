@@ -59,7 +59,7 @@ include 'includes/templates/header.php';
         }
     </style>
 </head>
-<section class="home-section">
+<section>
     <main>
         <div>
             <div class="section-fade-out">

@@ -1,0 +1,54 @@
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/variables-dark";
+@import "./node_modules/bootstrap/scss/mixins";
+$primary: #3e3be6;
+$danger: #ff4136;
+
+$theme-colors: (
+    "primary": $primary,
+    "danger": $danger
+);
+
+$custom-colors: (
+    "custom-color": #e5ff00
+);
+
+$theme-colors: map-remove($theme-colors, $custom-colors);
+//tarjetas
+$card-bg: #272727;
+$card-color: #c2c2c2;
+
+//barra de navegacion
+$nav-link-padding-y: .5rem;
+$nav-link-padding-x: 1rem;
+$nav-link-font-size: null;
+$nav-link-font-weight: null;
+$nav-link-color: #b9b9b9;
+$nav-link-hover-color: #ffffff;
+$nav-link-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+$nav-underline-link-active-color: #181818;
+
+//tabla
+$table-variants: (
+  "primary":    shift-color($primary, $table-bg-scale),
+  "secondary":  shift-color($secondary, $table-bg-scale),
+  "success":    shift-color($success, $table-bg-scale),
+  "info":       shift-color($info, $table-bg-scale),
+  "warning":    shift-color($warning, $table-bg-scale),
+  "danger":     shift-color($danger, $table-bg-scale),
+  "light":      $light,
+  "dark":       #131313,
+);
+
+
+$table-color: #fcfcfc;
+$table-bg: #1a1a1a;
+
+$table-striped-bg-factor:     .05;
+$table-striped-bg: rgba(#000, $table-striped-bg-factor);
+
+
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss";

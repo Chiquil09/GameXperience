@@ -1,5 +1,5 @@
 <?php include 'includes/templates/header.php'; ?>
-<section class="home-section">
+<section>
     <main>
         <div class="rounded-4">
             <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">

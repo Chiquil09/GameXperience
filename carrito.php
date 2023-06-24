@@ -1,5 +1,5 @@
 <?php include 'includes/templates/header.php'; ?>
-<section class="home-section">
+<section>
     <main>
         <div class="container carrito">
             <div class="titulo">
