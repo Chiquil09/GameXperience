@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = filter_var($id, FILTER_VALIDATE_INT);
 
     if ($id) {
-        //elimina la propiedad
+        //elimina la producto
         $query = "DELETE FROM productos WHERE id = {$id}";
         $resultado = $mysqli->execute_query($query);
 

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2023 a las 05:47:04
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Tiempo de generación: 25-06-2023 a las 06:50:11
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,24 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `biblioteca`
---
-
-CREATE TABLE `biblioteca` (
-  `id` int(11) NOT NULL,
-  `datos_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `biblioteca`
---
-
-INSERT INTO `biblioteca` (`id`, `datos_id`) VALUES
-(1, 1);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `datos`
 --
 
@@ -51,16 +33,16 @@ CREATE TABLE `datos` (
   `desarrolador` varchar(60) NOT NULL,
   `genero_id` int(11) NOT NULL,
   `producto_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `datos`
 --
 
 INSERT INTO `datos` (`id`, `puntuacion`, `desarrolador`, `genero_id`, `producto_id`) VALUES
-(1, '12', 'bungie', 1, 1),
-(2, '4.5', 'mojang', 2, 2),
-(3, '4.3', 'manuelito ayala', 3, 3);
+(3, '4.3', 'manuelito ayala', 3, 3),
+(4, '5', 'hfhfh', 1, 4),
+(5, '5', 'ffff', 1, 5);
 
 -- --------------------------------------------------------
 
@@ -71,7 +53,7 @@ INSERT INTO `datos` (`id`, `puntuacion`, `desarrolador`, `genero_id`, `producto_
 CREATE TABLE `generos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `generos`
@@ -95,16 +77,16 @@ CREATE TABLE `productos` (
   `imagen` varchar(200) NOT NULL,
   `imagenPoster` varchar(200) NOT NULL,
   `precio` decimal(10,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `productos`
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `imagen`, `imagenPoster`, `precio`) VALUES
-(1, 'Halo infiniy', 'un juego creado especial mente para...', 'img.jpg', 'post.jpg', '200.00'),
-(2, 'minecraft', 'un juego de bloques', 'minecraft-swirls-i129032.jpg', 'minecraft-swirls-i129032.jpg', '160.00'),
-(3, 'Doom Eternal', 'juego de gerra', '1303642.jpeg', '1303642.jpeg', '300.00');
+(3, 'Doom Eternal', 'juego de gerra', '1303642.jpeg', '1303642.jpeg', 300.00),
+(4, 'jjj', 'hhhh', 'android-accion.jpg', '', 700.00),
+(5, 'Warzone', 'hdhdhdhdh', '1366_2000.jpg', '', 500.00);
 
 -- --------------------------------------------------------
 
@@ -113,30 +95,25 @@ INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `imagen`, `imagenPoster`
 --
 
 CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
+  `id` int(100) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `correo` varchar(50) NOT NULL,
-  `contrasena` char(60) NOT NULL,
-  `biblioteca_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `correo` varchar(60) NOT NULL,
+  `contrasena` char(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contrasena`, `biblioteca_id`) VALUES
-(1, 'angel kau', 'ang738093@gmail.com', '123', 1);
+INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contrasena`) VALUES
+(1, 'kevin', 'kevin@gmail.com', '123'),
+(2, 'Ayala', 'correo@correo.com', '123'),
+(3, 'Angel', 'angel@gmail.com', '123'),
+(4, 'Halo infini', 'angeaaal@gmail.com', '123');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `biblioteca`
---
-ALTER TABLE `biblioteca`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fkdatosid` (`datos_id`);
 
 --
 -- Indices de la tabla `datos`
@@ -162,24 +139,17 @@ ALTER TABLE `productos`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fkbibliotecaid` (`biblioteca_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `biblioteca`
---
-ALTER TABLE `biblioteca`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT de la tabla `datos`
 --
 ALTER TABLE `datos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `generos`
@@ -191,23 +161,17 @@ ALTER TABLE `generos`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `biblioteca`
---
-ALTER TABLE `biblioteca`
-  ADD CONSTRAINT `biblioteca_ibfk_1` FOREIGN KEY (`datos_id`) REFERENCES `datos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `datos`
@@ -215,12 +179,6 @@ ALTER TABLE `biblioteca`
 ALTER TABLE `datos`
   ADD CONSTRAINT `datos_ibfk_1` FOREIGN KEY (`genero_id`) REFERENCES `generos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `datos_ibfk_2` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`biblioteca_id`) REFERENCES `biblioteca` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

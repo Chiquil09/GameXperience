@@ -40,7 +40,7 @@ if(!empty($_GET['email'])){
         if(($result->num_rows > 0)){
 
         }else{
-            $query = 'INSERT INTO usuarios(nombre, correo, contrasena,biblioteca_id) VALUES ("'.$nombre.'","'. $correo.'","'.$password.'", "1")';
+            $query = 'INSERT INTO usuarios(nombre, correo, contrasena) VALUES ("'.$nombre.'","'. $correo.'","'.$password.'")';
             $result = $mysqli->execute_query($query);
             
             header('Location: '.App.'/admin');

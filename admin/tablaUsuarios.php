@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>nombre</th>
+                    <th>Nombre</th>
                     <th>correo</th>
                     <th>Acciones</th>
                 </tr>
