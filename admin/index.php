@@ -1,11 +1,8 @@
 <?php
-session_start();
-$auth = $_SESSION['login'];
-if(!$auth){
-    header('Location: index.php');
-}
+// Importar base de datos
 include '../includes/funciones/db_conexion.php';
 include("../includes/templates/header.php");
+
 // Escribir el Query
 $query = "SELECT * FROM productos";
 
@@ -26,10 +23,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+session_start();
+if (empty($_SESSION["permitido"])) {
+
+    $url = "/";
+    $statusCode = 303;
+    header('Location: ' . $url, true, $statusCode);
+    die;
+} else {
+    //echo "Hola Amigo ".$_SESSION['permitido'];
+    if ($_SESSION['rol'] == 'admin') {
+    } else {
+        header('Location: /');
+    }
+}
 ?>
 <section class="">
     <main class="contenedor container px-5">
-        <h1>Bienvenido: <?php echo "" . $_SESSION['usuario']; ?></h1>
+        <h1>Bienvenido: <?php echo "" . $_SESSION['permitido']; ?></h1>
 
         <a href="<?php echo App; ?>/admin/crear.php" class="boton boton-verde shadow-sm p-3 mb-5">Nuevo Juego</a>
         <a href="<?php echo App; ?>/admin/vendedores.php" class="boton boton-verde shadow-sm p-3 mb-5">Nueva categoria</a>

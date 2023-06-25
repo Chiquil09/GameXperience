@@ -1,9 +1,4 @@
 <?php
-session_start();
-$auth = $_SESSION['login'];
-if(!$auth){
-   header('Location: ../index.php');
-}
 include '../includes/funciones/db_conexion.php';
 include("../includes/templates/header.php");
 // Verificar si se ha enviado un ID válido

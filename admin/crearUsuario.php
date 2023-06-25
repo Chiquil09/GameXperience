@@ -1,9 +1,4 @@
 <?php
-session_start();
-$auth = $_SESSION['login'];
-if(!$auth){
-    header('Location: ../index.php');
-}
 include '../includes/funciones/db_conexion.php';
 include("../includes/templates/header.php");
 if(!empty($_GET['email'])){
@@ -26,13 +21,12 @@ if(!empty($_GET['email'])){
         $nombre=$_GET["nombre"];
         $apellido=$_GET["apellido"];
         $query = 'SELECT * FROM usuarios where correo="'.$correo.'"';
-        $passwordHash = password_hash($password, PASSWORD_BCRYPT);
         $result = $mysqli->execute_query($query);
 
         if(($result->num_rows > 0)){
 
         }else{
-            $query = 'INSERT INTO usuarios(nombre, correo, contrasena,biblioteca_id) VALUES ("'.$nombre.'","'. $correo.'","'. $passwordHash.'", "1")';
+            $query = 'INSERT INTO usuarios(nombre, correo, contrasena,biblioteca_id) VALUES ("'.$nombre.'","'. $correo.'","'.$password.'", "1")';
             $result = $mysqli->execute_query($query);
             
             header('Location: '.App.'/admin');

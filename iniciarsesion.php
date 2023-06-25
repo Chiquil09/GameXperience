@@ -1,57 +1,46 @@
 <?php
+session_start();
 include 'includes/funciones/db_conexion.php';
+//registance
 
-// Autenticar el usuario 
+if (empty($_GET['nombre'])) {
 
-$errores = [];
+    if (!empty($_GET['email'])) {
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   /*  echo "<pre>";
-    var_dump($_POST);
-    echo "<pre>"; */
-
-    $email = mysqli_real_escape_string($mysqli, filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
-    $password = mysqli_real_escape_string($mysqli,  $_POST['password']);
-
-    if (!$email) {
-        $errores[] = "El email es obligatorio";
-    }
-
-    if (!$password) {
-        $errores[] = "El password es obligatorio";
-    }
-
-    if(empty($errores)){
-        //Revisar si el usuario existe
-        $query = "SELECT * FROM usuarios WHERE correo = '${email}'";
-        $resultado = $mysqli->execute_query($query);
-
-
-        if ($resultado->num_rows) {
-            // Revisar si el password es correcto
-            $usuario = mysqli_fetch_assoc($resultado);
-           
-            //Verificar si el password es correcto o no 
-            $auth = password_verify($password, $usuario['contrasena']);
-            if($auth){
-                session_start();
-                $_SESSION['usuario'] = $usuario['correo'];
-                $_SESSION['login'] = true;
-                header('Location: admin/index.php');
-
-            }else{
-                $errores[] = "El password es incorrecto";
-            }
-        }else{
-            $errores[] = "El usuario no exciste";
+        $correo = $_GET["email"];
+        $password = $_GET["password"];
+        $query = 'SELECT * FROM usuarios where correo="' . $correo . '" and contrasena="' . $password . '"';
+        $result = $mysqli->execute_query($query);
+        $info = $result->fetch_array(MYSQLI_ASSOC);
+        if (!empty($info)) {
+            $_SESSION["permitido"] = $info['correo'];
+            $_SESSION['rol'] = 'admin';
+            $url = "admin";
+            $statusCode = 303;
+            header('Location: ' . $url, true, $statusCode);
         }
+    } //fin registrance
+} else { //no esta vacio nombre quiere decir que voy a registrar nuevo usuario
 
+    $correo = $_GET["email"];
+    $password = $_GET["password"];
+    $nombre = $_GET["nombre"];
+    $apellido = $_GET["apellido"];
+    $query = 'SELECT * FROM usuarios where correo="' . $correo . '"';
+    $result = $mysqli->execute_query($query);
+
+    if (($result->num_rows > 0)) {
+        echo "usuario ya registrado";
+    } else {
+        echo "Registrando";
+        $query = 'INSERT INTO usuarios(nombre, correo, contrasena,biblioteca_id) VALUES ("' . $nombre . '","' . $correo . '","' . $password . '", "1")';
+
+        $result = $mysqli->execute_query($query);
     }
 }
-
-include("includes/templates/header.php");
+//unset($_SESSION["permitido"]);
 ?>
-<?php include 'includes/funciones/db_conexion.php'; ?>
+<?php include 'includes/templates/header.php'; ?>
 <section>
     <main>
         <div class="wrapper">
@@ -74,27 +63,21 @@ include("includes/templates/header.php");
                 <!------------------- login form -------------------------->
 
                 <div class="login-container" id="login">
-                    <form method="POST">
+                    <form action="iniciarsesion.php">
                         <div class="top">
                             <header>Acceder a Admin</header>
-
-                            <?php foreach ($errores as $error) : ?>
-                                <div class="alerta error">
-                                    <?php echo $error; ?>
-                                </div>
-
-                            <?php endforeach; ?>
-                            <div class="input-box">
-                                <input id="email" name="email" type="text" class="input-field" placeholder="Email" >
-                                <i class="bx bx-user"></i>
-                            </div>
-                            <div class="input-box">
-                                <input id="password" name="password" type="password" class="input-field" placeholder="Contraseña">
-                                <i class="bx bx-lock-alt"></i>
-                            </div>
-                            <div class="input-box">
-                                <input id="registance" type="submit" class="submit" value="Acceder">
-                            </div>
+                        </div>
+                        <div class="input-box">
+                            <input id="email" name="email" type="text" class="input-field" placeholder="Email">
+                            <i class="bx bx-user"></i>
+                        </div>
+                        <div class="input-box">
+                            <input id="password" name="password" type="password" class="input-field" placeholder="Contraseña">
+                            <i class="bx bx-lock-alt"></i>
+                        </div>
+                        <div class="input-box">
+                            <input id="registance" type="submit" class="submit" value="Acceder">
+                        </div>
                     </form>
                 </div>
 
