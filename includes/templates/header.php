@@ -1,6 +1,10 @@
+<?php define("App", "/GameXperience");?>
 <?php
-define("App", "/GameXperience");
 
+if (!isset($_SESSION)) { //REVISA
+    session_start(); //CON ESTE IF SI LA SESION NO ESTA INICIADA SE INICIA (PARA QUE NO SEA DOBLE)
+}
+$auth = $_SESSION["login"] ?? false;
 ?>
 <!DOCTYPE html>
 <html data-bs-theme="dark" data-lt-installed="true" lang="en">
@@ -52,10 +56,14 @@ define("App", "/GameXperience");
           </a>
         </li>
         <li class="mt-3">
-          <a href="<?php echo App; ?>/iniciarsesion.php" class="nav-link">
-            <i class="bi bi-braces"></i>
+        <?php if (!$auth) : ?>
+          <a href="<?php echo App; ?>/iniciarsesion.php" class="nav-link"><i class="bi bi-braces"></i>
             Login
           </a>
+          <?php endif; ?>
+          <?php if ($auth) : ?>
+        <a href="<?php echo App; ?>/cerrar-sesion.php" class="nav-link"><i class="bi bi-braces"></i> Cerrar Sesion</a>
+        <?php endif; ?>
         </li>
       </ul>
 
