@@ -1,4 +1,18 @@
 <?php
+session_start();
+if (empty($_SESSION["permitido"])) {
+
+    $url = "../index.php";
+    $statusCode = 303;
+    header('Location: ' . $url, true, $statusCode);
+    die;
+} else {
+    //echo "Hola Amigo ".$_SESSION['permitido'];
+    if ($_SESSION['rol'] == true) {
+    } else {
+        header('Location: /');
+    }
+}
 include '../includes/funciones/db_conexion.php';
 include("../includes/templates/header.php");
 if (!empty($_GET['puntuacion'])) {

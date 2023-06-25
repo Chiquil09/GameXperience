@@ -14,10 +14,9 @@ if (empty($_GET['nombre'])) {
         $info = $result->fetch_array(MYSQLI_ASSOC);
         if (!empty($info)) {
             $_SESSION["permitido"] = $info['correo'];
-            $_SESSION['rol'] = 'admin';
-            $url = "admin";
+            $_SESSION['rol'] = true;
             $statusCode = 303;
-            header('Location: ' . $url, true, $statusCode);
+            header('Location: admin/index');
         }
     } //fin registrance
 } else { //no esta vacio nombre quiere decir que voy a registrar nuevo usuario

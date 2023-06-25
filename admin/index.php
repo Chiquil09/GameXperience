@@ -1,4 +1,18 @@
 <?php
+session_start();
+if (empty($_SESSION["permitido"])) {
+
+    $url = "index.php";
+    $statusCode = 303;
+    header('Location: ' . $url, true, $statusCode);
+    die;
+} else {
+    //echo "Hola Amigo ".$_SESSION['permitido'];
+    if ($_SESSION['rol'] == true) {
+    } else {
+        header('Location: /');
+    }
+}
 // Importar base de datos
 include '../includes/funciones/db_conexion.php';
 include("../includes/templates/header.php");
@@ -21,21 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($resultado) {
             header('Location: ' . App . '/admin');
         }
-    }
-}
-
-session_start();
-if (empty($_SESSION["permitido"])) {
-
-    $url = "/";
-    $statusCode = 303;
-    header('Location: ' . $url, true, $statusCode);
-    die;
-} else {
-    //echo "Hola Amigo ".$_SESSION['permitido'];
-    if ($_SESSION['rol'] == 'admin') {
-    } else {
-        header('Location: /');
     }
 }
 ?>
