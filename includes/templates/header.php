@@ -10,7 +10,7 @@ $auth = $_SESSION["rol"] ?? false;
 <!DOCTYPE html>
 <html data-bs-theme="dark" data-lt-installed="true" lang="en">
 
-<head>
+<head><script src="../assets/js/color-modes.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GameXperience</title>
@@ -22,11 +22,9 @@ $auth = $_SESSION["rol"] ?? false;
 </head>
 
 <body>
-  <div class="menu">
-    <button class="btn btn-primary fixed-top" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-      <i class="bi bi-list"></i>
-    </button>
-  </div>
+  <button class="btn btn-primary fixed-top" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+    <i class="bi bi-list"></i>
+  </button>
 
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
@@ -57,11 +55,11 @@ $auth = $_SESSION["rol"] ?? false;
           </a>
         </li>
         <li class="mt-3">
-        <?php if (!$auth) : ?>
-          <a href="<?php echo App; ?>/iniciarsesion.php" class="nav-link"><i class="bi bi-braces"></i>Login</a><?php endif; ?>
-          <?php 
+          <?php if (!$auth) : ?>
+            <a href="<?php echo App; ?>/iniciarsesion.php" class="nav-link"><i class="bi bi-braces"></i>Login</a><?php endif; ?>
+          <?php
           if ($auth) : ?>
-          <a href="<?php echo App; ?>/cerrar-sesion.php" class="nav-link"><i class="bi bi-braces"></i>Cerrar Sesion</a>
+            <a href="<?php echo App; ?>/cerrar-sesion.php" class="nav-link"><i class="bi bi-braces"></i>Cerrar Sesion</a>
           <?php endif; ?>
         </li>
       </ul>

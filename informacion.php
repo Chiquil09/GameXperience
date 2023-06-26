@@ -68,7 +68,7 @@ include 'includes/templates/header.php';
         </div>
         <div>
             <div class="contenedor">
-                <div class="profile">
+                <div class="profile border">
                     <img src="imagenes/<?php echo !empty($info) ? $info['imagen'] : ' '; ?>">
                 </div>
                 <div class="d-flex inf pre">

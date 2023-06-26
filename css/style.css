@@ -19,6 +19,11 @@
 
 }
 
+body {
+    background-color: #101010;
+    color: #fff;
+}
+
 .section-fade-out {
     width: 100%;
     height: 70vh;
@@ -44,7 +49,7 @@
 
 body {
     height: 100vh;
-    background: #131313;
+    background: #191a1f;
 }
 
 
@@ -62,9 +67,9 @@ footer {
 .hover {
     font-weight: bold;
     color: #000;
-    text-decoration: none!important;
+    text-decoration: none !important;
     transition: 0.5s ease-in-out;
-    animation:8s ease-in-out forwards alternate c-color infinite;
+    animation: 8s ease-in-out forwards alternate c-color infinite;
     box-shadow: #0b0b0b 0 0 1rem 0;
 }
 
@@ -166,10 +171,12 @@ footer {
 .carta img {
     border-radius: 0px 10px;
 }
-.card{
+
+.card {
     transition: 0.2s ease-in-out;
 }
-.card:hover{
+
+.card:hover {
     transform: scale(1.05);
 }
 
@@ -922,7 +929,7 @@ table.propiedades .imagen-tabla {
 }
 
 .h22 {
-    width: 150%;
+    width: 100%;
     margin-top: -10rem;
     z-index: 1000;
 }

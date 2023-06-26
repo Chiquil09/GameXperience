@@ -42,25 +42,32 @@ if (empty($_GET['nombre'])) {
 <?php include 'includes/templates/header.php'; ?>
 <section>
     <main>
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+            <div class="row align-items-center g-lg-5 py-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Acceder</h1>
+                    <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+                </div>
+                <div class="col-md-10 mx-auto col-lg-5">
+                    <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                        <div class="form-floating mb-3">
+                            <input id="email" name="email" type="text" class="form-control" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input id="password" name="password" type="password" class="form-control" placeholder="Contraseña">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <input id="registance" type="submit" class="w-100 btn btn-lg btn-primary"" value=" Acceder">
+                        <hr class="my-4">
+                        <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--
         <div class="wrapper">
-            <nav class="nav1">
-                <div class="nav-menu" id="navMenu">
-                    <ul>
-                        <li id="loginBtn" onclick="login()"><a href="#" class="link">Iniciar Sesion</a></li>
-                        <!--  <li id="registerBtn" onclick="register()"><a href="#" class="link">Registrarse</a></li> -->
-                    </ul>
-
-                </div>
-                <div class="nav-menu-btn">
-                    <i class="bx bx-menu" onclick="myMenuFunction()"></i>
-                </div>
-            </nav>
-
-            <!----------------------------- Form box ----------------------------------->
             <div class="form-box">
-
-                <!------------------- login form -------------------------->
-
                 <div class="login-container" id="login">
                     <form action="iniciarsesion.php">
                         <div class="top">
@@ -80,8 +87,7 @@ if (empty($_GET['nombre'])) {
                     </form>
                 </div>
 
-                <!------------------- registration form -------------------------->
-                <!--                     <div class="register-container" id="register">
+                                     <div class="register-container" id="register">
                         <form action="iniciarsesion.php">
                         <div class="top">
                             <header>REGISTRARSE</header>
@@ -108,9 +114,9 @@ if (empty($_GET['nombre'])) {
                             <input type="submit" class="submit" value="Registrace">
                         </div>
                         </form>
-                    </div> -->
+                    </div> 
             </div>
-        </div>
+        </div>-->
 
 
         <script>

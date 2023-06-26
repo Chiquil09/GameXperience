@@ -38,9 +38,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<section class="">
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <style>
+        
+        body {
+            background-color: #101010;
+            color: #fff;
+        }
+
+        .contenedor {
+            background-color: #101010;
+        }
+
+    </style>
+</head>
+<section >
     <main class="contenedor container px-5">
-        <h1>Bienvenido: <?php echo "" . $_SESSION['permitido']; ?></h1>
+        <div aria-live="polite" aria-atomic="true" class="position-relative">
+            <div class="toast-container top-0 end-0 p-3">
+                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img src="..." class="rounded me-2" alt="...">
+                        <strong class="me-auto">Bootstrap</strong>
+                        <small class="text-body-secondary">just now</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                    Bienvenido: <?php echo "" . $_SESSION['permitido']; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <a href="<?php echo App; ?>/admin/crear.php" class="boton boton-verde shadow-sm p-3 mb-5">Nuevo Juego</a>
         <a href="<?php echo App; ?>/admin/vendedores.php" class="boton boton-verde shadow-sm p-3 mb-5">Nueva categoria</a>
