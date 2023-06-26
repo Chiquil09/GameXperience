@@ -114,6 +114,22 @@
       }
     });
   }
+
+  function sesion(event) {
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+    Swal.fire({
+  icon: 'Error',
+  title: 'Oops...',
+  text: 'Correo o contraseña incorectos!',
+}).then((result) => {
+      if (result.isConfirmed) {
+        // Aquí puedes realizar la eliminación del registro o cualquier otra acción
+        // Una vez que el usuario confirma la acción
+        event.target.submit(); // Envía el formulario después de la confirmación
+      }
+    });
+  }
 </script>
 
 </body>

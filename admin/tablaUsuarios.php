@@ -23,9 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errores[] = "El email o password incorrectos";
 }
 ?>
-<<<<<<< Updated upstream
+
 <table class="table table-dark table-striped propiedades">
-=======
  <h2 class="mt-5">Administradores</h2>
 
  <?php foreach ($errores as $error) : ?>
@@ -36,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endforeach; ?>
       <div class="table-responsive">
             <table class="table table-dark table-striped propiedades">
->>>>>>> Stashed changes
             <thead>
                 <tr>
                     <th scope="col">ID</th>

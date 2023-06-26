@@ -18,7 +18,7 @@ if (empty($_GET['nombre'])) {
             $statusCode = 303;
             header('Location: admin/index');
         }else{
-            $errores[] = "El email o password incorrectos";
+            $errores[] = "El email o password son incorrectos";
                 
             
         }
@@ -50,16 +50,22 @@ if (empty($_GET['nombre'])) {
             <div class="row align-items-center g-lg-5 py-5">
                 <div class="col-lg-7 text-center text-lg-start">
                     <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Acceder</h1>
+                    <?php foreach ($errores as $error) : ?>
+                                <div class="alerta error">
+                                    <?php echo $error; ?>
+                                </div>
+
+                            <?php endforeach; ?>
                     <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
                 </div>
                 <div class="col-md-10 mx-auto col-lg-5">
                     <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
                         <div class="form-floating mb-3">
-                            <input id="email" name="email" type="text" class="form-control" placeholder="name@example.com">
+                            <input id="email" name="email" type="text" class="form-control" placeholder="name@example.com" required>
                             <label for="floatingInput">Email address</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input id="password" name="password" type="password" class="form-control" placeholder="Contraseña">
+                            <input id="password" name="password" type="password" class="form-control" placeholder="Contraseña" required>
                             <label for="floatingPassword">Password</label>
                         </div>
                         <input id="registance" type="submit" class="w-100 btn btn-lg btn-primary"" value=" Acceder">
