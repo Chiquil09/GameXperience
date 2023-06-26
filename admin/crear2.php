@@ -113,7 +113,7 @@ if (!empty($_GET['puntuacion'])) {
         <main class="contenedor container px-5">
             <h2>Datos Generales</h2>
 
-            <form action="crear2.php">
+            <form action="crear2.php" onsubmit="return nuevojuego(event);">
                 <table width="540">
                     <tr valign="top">
                         <td width="500">Puntuacion</td>
@@ -150,3 +150,6 @@ if (!empty($_GET['puntuacion'])) {
 </body>
 
 </html>
+<?php
+    include("../includes/templates/footer.php");
+?>

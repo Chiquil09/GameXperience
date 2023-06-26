@@ -2,7 +2,7 @@
 session_start();
 include 'includes/funciones/db_conexion.php';
 //registance
-
+$errores = [];
 if (empty($_GET['nombre'])) {
 
     if (!empty($_GET['email'])) {
@@ -17,6 +17,10 @@ if (empty($_GET['nombre'])) {
             $_SESSION['rol'] = true;
             $statusCode = 303;
             header('Location: admin/index');
+        }else{
+            $errores[] = "El email o password incorrectos";
+                
+            
         }
     } //fin registrance
 } else { //no esta vacio nombre quiere decir que voy a registrar nuevo usuario
@@ -72,13 +76,19 @@ if (empty($_GET['nombre'])) {
                     <form action="iniciarsesion.php">
                         <div class="top">
                             <header>Acceder a Admin</header>
+                            <?php foreach ($errores as $error) : ?>
+                                <div class="alerta error">
+                                    <?php echo $error; ?>
+                                </div>
+
+                            <?php endforeach; ?>
                         </div>
                         <div class="input-box">
-                            <input id="email" name="email" type="text" class="input-field" placeholder="Email">
+                            <input id="email" name="email" type="text" class="input-field" placeholder="Email" required>
                             <i class="bx bx-user"></i>
                         </div>
                         <div class="input-box">
-                            <input id="password" name="password" type="password" class="input-field" placeholder="Contraseña">
+                            <input id="password" name="password" type="password" class="input-field" placeholder="Contraseña" required>
                             <i class="bx bx-lock-alt"></i>
                         </div>
                         <div class="input-box">

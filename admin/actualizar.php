@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $sql = "UPDATE productos SET nombre = '$nombre', descripcion = '$descripcion', imagen = '$nombreArchivo', precio = $precio WHERE id = $id";
 
             if ($mysqli->query($sql) === TRUE) {
-                header('Location: '.App.'/admin');
+                header('Location: '.App.'/admin' );
             } else {
                 echo "Error al actualizar el juego: " . $mysqli->error;
             }
@@ -55,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($mysqli->query($sql) === TRUE) {
             header('Location: '.App.'/admin');
+            
         } else {
             echo "Error al actualizar el juego: " . $mysqli->error;
         }
@@ -149,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <h2>Actualizar Juego</h2>
 
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data" onsubmit="return actualizar(event);">
                 <table width="540">
                     <tr valign="top">
                         <td width="500">Nombre</td>
@@ -172,9 +173,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </tr>
                 </table>
                 <input name="restablecer" type="reset" id="restablecer" value="Restablecer">
-                <button type="submit" name="enviar" id="enviar">Actualizar</button>
+                <button type="submit" name="enviar" id="enviar" >Actualizar</button>
             </form>
         </main>
     </section>
 </body>
 </html>
+<?php
+    include("../includes/templates/footer.php");
+?>

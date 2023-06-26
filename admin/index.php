@@ -16,7 +16,7 @@ if (empty($_SESSION["permitido"])) {
 // Importar base de datos
 include '../includes/funciones/db_conexion.php';
 include("../includes/templates/header.php");
-
+$errores = [];
 // Escribir el Query
 $query = "SELECT * FROM productos";
 
@@ -31,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //elimina la producto
         $query = "DELETE FROM productos WHERE id = {$id}";
         $resultado = $mysqli->execute_query($query);
-
         if ($resultado) {
             header('Location: ' . App . '/admin');
         }
@@ -99,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <th>
                                 <a href="<?php echo App; ?>/admin/actualizar.php?id=<?php echo $productos['id']; ?>" class="btn border shadow-sm p-3 mb-5" role="button">
                                     Actualizar</a>
-                                <form method="POST" class="w-100">
+                                <form method="POST" class="w-100" onsubmit="return confirmAlerta(event);">
                                     <input type="hidden" name="id" value="<?php echo $productos['id']; ?>">
                                     <input type="submit" class="btn btn-danger shadow-sm p-3 mb-5" value="Eliminar" class="w-100">
                                 </form>

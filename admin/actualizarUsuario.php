@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <h2>Actualizar </h2>
 
-            <form method="POST">
+            <form method="POST" onsubmit="return actualizar(event);">
                 <table width="540">
 
                     <tr class="input-box">
@@ -161,4 +161,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 </body>
 
-</html>
+<?php
+    include("../includes/templates/footer.php");
+?>

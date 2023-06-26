@@ -22,9 +22,17 @@ $auth = $_SESSION["rol"] ?? false;
 </head>
 
 <body>
+<<<<<<< Updated upstream
   <button class="btn btn-primary fixed-top" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
     <i class="bi bi-list"></i>
   </button>
+=======
+  <div class="menu">
+    <button class="btn btn-primary fixed-top1" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+      <i class="bi bi-list"></i>
+    </button>
+  </div>
+>>>>>>> Stashed changes
 
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">

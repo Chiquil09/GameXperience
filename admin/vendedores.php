@@ -98,7 +98,7 @@ if (!empty($_GET['nombre'])) {
 
     <h2>Nueva Categoria</h2>
    
-    <form action="vendedores.php">
+    <form action="vendedores.php" onsubmit="return nuevoadmin(event);">
         <table width="540" >
           <tr valign="top">
             <td width="500">Categoria</td>
@@ -108,8 +108,7 @@ if (!empty($_GET['nombre'])) {
         
           <input name="restablecer" type="reset" id="restablecer" value="Restablecer">
           <button type="submit" name="enviar" id="enviar">Registrar</button>
-        
-      
-
-
     </form>
+    <?php
+    include("../includes/templates/footer.php");
+?>

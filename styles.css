@@ -3022,6 +3022,7 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #000;
   --bs-btn-disabled-bg: #ff4136;
   --bs-btn-disabled-border-color: #ff4136;
+  --bs-btn-font-weight: 5000;
 }
 
 .btn-outline-primary {
@@ -11468,3 +11469,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }/*# sourceMappingURL=styles.css.map */
+
+.fixed-top1 {
+  position: right;
+
+}

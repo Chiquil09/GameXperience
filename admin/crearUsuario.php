@@ -123,7 +123,7 @@ if(!empty($_GET['email'])){
 <body>
     <section class="home-section">
         <main class="contenedor p-5">
-            <form action="crearUsuario.php">
+            <form action="crearUsuario.php" onsubmit="return nuevacategoria(event);">
                 <div class="top">
                     <header>REGISTRAR</header>
                 </div>
@@ -148,3 +148,6 @@ if(!empty($_GET['email'])){
 </body>
 
 </html>
+<?php
+    include("../includes/templates/footer.php");
+?>
